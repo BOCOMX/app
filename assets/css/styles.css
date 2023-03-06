@@ -1,0 +1,934 @@
+/*=============== GOOGLE FONTS ===============*/
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap");
+@font-face {
+  font-family: Organic Brand;
+  src: url('./tipografía/Organic-Brand.ttf');
+}
+
+/*=============== VARIABLES CSS ===============*/
+:root {
+  /*========== Colors ==========*/
+  --first-color: #1C1C1C;
+  --second-color:#FFFFFF;
+  --terciary-color: #FF678D;
+  --text-color: #6E6F77;
+  --body-color: #F9FAFF;
+  --container-color: #FFFFFF;
+
+  /*========== Font and typography ==========*/
+  --body-font: 'Poppins', sans-serif;
+  --tiny-font-size: .625rem;
+}
+
+@media screen and (min-width: 968px) {
+  :root {
+    --tiny-font-size: .688rem;
+  }
+}
+
+/*=============== BASE ===============*/
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-user-select: none; /* Safari */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none; /* Standard */
+  -webkit-touch-callout: none;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--body-font);
+  background-color: var(--body-color);
+  color: var(--text-color);
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+/*=============== NAVBAR ===============*/
+.container {
+  max-width: 968px;
+  margin-left: 1.5rem;
+  margin-right: 1.5rem;
+  padding-top: 110px;
+}
+
+.container h2 {
+  text-align: center;
+  color: var(--first-color);
+}
+
+.container h3 {
+  text-align: center;
+  color: var(--first-color);
+}
+
+.container h4 {
+  text-align: center;
+}
+
+/*Remove the property of 100vh, when inserting its content*/
+.container section {
+  height: 100%;
+  padding: 2rem 0;
+}
+
+.container h2 {
+  text-align: center;
+  color: var(--first-color);
+}
+
+.nav {
+  position: fixed;
+  bottom: 1rem;
+  left: 0;
+  right: 0;
+  width: 328px;
+  height: 72px;
+  background-color: var(--container-color);
+  box-shadow: 0 8px 32px hsla(231, 44%, 45%, .2);
+  margin: 0 auto;
+  padding: 1.5rem .5rem;
+  border-radius: .65rem;
+  overflow: hidden;
+}
+
+.nav__list {
+  display: flex;
+  justify-content: center;
+  column-gap: 2rem;
+}
+
+.nav__link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+}
+
+.nav__link img {
+  font-size: 1.5rem;
+  filter: invert(8%) sepia(18%) saturate(9%) hue-rotate(333deg) brightness(102%) contrast(94%);
+  z-index: 20;
+  transition: .3s;
+}
+
+.nav__name {
+  font-size: var(--tiny-font-size);
+  position: absolute;
+  font-weight: 500;
+  transition: .4s;
+  transform: translateY(50px);
+  z-index: 20;
+  color: var(--body-color);
+  opacity: 0;
+}
+
+/* Indicator link */
+.indicator {
+  position: absolute;
+  left: 5px;
+  bottom: 0;
+  fill: var(--first-color);
+  transition: .3s;
+}
+
+/* Active link */
+.active-link img {
+ filter: brightness(0) invert(100%) sepia(15%) saturate(7448%) hue-rotate(180deg) brightness(114%) contrast(98%);;
+}
+
+.active-link .nav__name {
+  opacity: 1;
+  transform: translateY(28px);
+}
+
+/* Move indicator */
+.nav__link:nth-child(1).active-link ~ .indicator {
+  transform: translateX(calc(56px * 0));
+}
+
+.nav__link:nth-child(2).active-link ~ .indicator {
+  transform: translateX(calc(56px * 1));
+}
+
+.nav__link:nth-child(3).active-link ~ .indicator {
+  transform: translateX(calc(56px * 2));
+}
+
+.nav__link:nth-child(4).active-link ~ .indicator {
+  transform: translateX(calc(56px * 3));
+}
+
+.nav__link:nth-child(5).active-link ~ .indicator {
+  transform: translateX(calc(56px * 4));
+}
+
+/*=============== ESCONDER CONTENIDO ========*/
+
+[data-content] {
+  display: none;
+}
+
+.active-content[data-content] {
+  display: block;
+}
+
+/*=============== MENÚ SUPERIOR ===============*/
+
+/* ENCABEZADO CON IMAGOTIPO Y BOTÓN */
+.header {
+  padding: 5px 4px 1px;
+  border-radius: 20px;
+  background-color: var(--container-color);
+  box-shadow: 0 8px 32px hsla(231, 44%, 45%, .2);
+  position: fixed;
+  width: 90%;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  margin-top: 20px;
+}
+
+/* CONTENEDOR IMAGOTIPO BOCO Y BOTONES */
+.header a {
+  float: left;
+  color: var(--first-color);
+  text-align: center;
+  text-decoration: none;
+  padding: 20px;
+}
+
+/* ESTILO DE IMAGOTIPO BOCO */
+.header a.logo {
+  font-family: 'Organic Brand';
+  font-size: 25px;
+}
+
+/* ESTILO BOTONES */
+.header a.btnicons{
+  float: right;
+  cursor: pointer;
+}
+
+/* LOADING SIN CONEXIÓN */
+
+.containerloader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.loader {
+  border: 16px solid #f3f3f3; /* Light grey */
+  border-top: 16px solid var(--terciary-color); /* Blue */
+  border-radius: 50%;
+  width: 90px;
+  height: 90px;
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/*=============== PANTALLA INICIO ===============*/
+
+/* PUBLICACIONES INICIO */
+.cardpost {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  margin: auto;
+  text-align: justify;
+  padding: 20px;
+  border-radius: 20px;
+  background-color: var(--second-color);
+}
+
+.cardpost img{
+  cursor: pointer;
+  border-radius: 15px;
+}
+
+.textpost {
+  color: var(--first-color);
+  font-size: 16px;
+}
+
+.time {
+  color: grey;
+  font-size: 12px;
+}
+
+.iconpost {
+  color: grey;
+  font-size: 12px;
+}
+
+.cardpost button {
+  border: none;
+  outline: 0;
+  padding: 12px;
+  color: white;
+  background-color: var(--first-color);
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+  font-size: 18px;
+  border-radius: 20px;
+  margin: 10px 0 0 0;
+}
+
+.cardpost h3 {
+  text-align: left;
+  color: var(--first-color);
+}
+
+/*=============== INICIO FULL IMAGENES ===============*/
+
+.full-Img{
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.9);
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 99;
+}
+
+.full-Img img{
+  width: 90%;
+  max-width: 600px;
+  border-radius: 20px;
+}
+
+.full-Img span{
+  position: absolute;
+  top: 5%;
+  right: 5%;
+  font-size: 30px;
+  color: var(--second-color);
+  cursor: pointer;
+}
+
+/*=============== PANTALLA ADOPTAR ===============*/
+
+/*=============== BOTONES ADOPTAR ===============*/
+
+.adoptarbtn_container{
+  columns: 2;
+  text-align: center;
+}
+
+.btnmascot {
+  border: none;
+  outline: none;
+  color: var(--second-color);
+  background-color: var(--first-color);
+  cursor: pointer;
+  border-radius: 15px;
+  width: 100%;
+  height: 50px;
+  font-size: 16px;
+}
+
+.btnmascot.active{
+  background-color: var(--terciary-color);
+}
+
+/*=============== ESCONDER Y MOSTRAR MASCOTAS ========*/
+
+[data-contentmascot] {
+  display: none;
+}
+
+.active-btnmascot[data-contentmascot] {
+  display: block;
+}
+
+/*=============== MASCOTAS ========*/
+
+/*=============== FILTRAR MASCOTAS ========*/
+
+.filtromascot h4{
+  text-align: left;
+  font-size: 14px;
+  color: grey;
+}
+
+/*=============== COLUMNAS ========*/
+
+/* Float four columns side by side */
+.column {
+  float: left;
+  width: 33.33%;
+  padding: 10px 10px;
+}
+
+/* Remove extra left and right margins, due to padding */
+.row {margin: 0 -5px;}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/*=============== PERFILES MASCOTAS ========*/
+
+.perfilmascot{
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  max-width: 300px;
+  margin: auto;
+  text-align: center;
+  background-color: var(--second-color);
+  padding: 15px;
+  border-radius: 20px;
+}
+
+.perfilmascot img{
+  border-radius: 10px;
+}
+
+.perfilmascot button{
+  border: none;
+  outline: 0;
+  padding: 8px;
+  color: var(--second-color);
+  background-color: var(--first-color);
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+  font-size: 14px;
+  border-radius: 20px;
+}
+
+.perfilmascot h3{
+  text-align: center;
+  color: var(--first-color);
+}
+
+.perfilmascot p{
+  color: var(--first-color);
+  font-size: 14px;
+}
+
+.logomascota {
+  color: var(--terciary-color);
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 5px;
+}
+
+/*=============== PERFILES MASCOTAS MODAL ========*/
+
+/* Estilos generales para los modales */
+.modal {
+  display: none; 
+  position: fixed; 
+  z-index: 1; 
+  left: 0;
+  top: 0;
+  width: 100%; 
+  height: 100%; 
+  overflow: auto; 
+  background-color: rgba(0,0,0,0.9); 
+}
+
+.modal-content {
+  background-color: var(--second-color);
+  margin: 25% auto; 
+  padding: 20px;
+  border-radius: 20px;
+  border: 1px solid none;
+  width: 90%;
+}
+
+.modal img{
+  border-radius: 20px;
+}
+
+.close {
+  color: var(--terciary-color);
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: var(--first-color);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/*=========== FOTOS PERFIL MASCOTAS BOCO ==================*/
+
+/* Position the image container (needed to position the left and right arrows) */
+.slideshow-container {
+  position: relative;
+}
+
+/* Hide the images by default */
+.mySlidesfotos {
+  display: none;
+}
+
+/* Add a pointer when hovering over the thumbnail images */
+.cursorfotos {
+  cursor: pointer;
+}
+
+.rowfotos{
+  text-align: center;
+}
+
+.rowfotos img{
+  width: 15%;
+}
+
+/* Add a transparency effect for thumnbail images */
+.demofotos {
+  opacity: 0.5;
+}
+
+.activefotos,
+.demofotos:hover {
+  opacity: 1;
+}
+
+/* Texto perfil mascotas */
+
+.tituloperfilmascota {
+  font-size: 18px;
+  color: var(--first-color);
+  font-weight: bold;
+}
+
+.requisitostitulo {
+  font-size: 18px;
+  color: var(--first-color);
+  font-weight: bold;
+  text-align: center;
+}
+
+.infoperfilmascota {
+  font-size: 14px;
+  color: var(--first-color);
+}
+
+.descripcionperfilmascota {
+  font-size: 14px;
+  color: var(--first-color);
+  text-align: justify;
+}
+
+.solicitaradopcion button {
+  border: none;
+  outline: 0;
+  padding: 8px;
+  color: var(--second-color);
+  background-color: var(--first-color);
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+  font-size: 14px;
+  border-radius: 20px;
+  margin-top: 10px;
+}
+
+/*============= REQUISITOS ADOPTAR ================*/
+
+.requisitosadoptar button {
+  border: none;
+  outline: 0;
+  padding: 8px;
+  color: var(--second-color);
+  background-color: var(--first-color);
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+  font-size: 14px;
+  border-radius: 20px;
+  margin-top: 10px;
+}
+
+.modaladoptar {
+  display: none; 
+  position: fixed; 
+  z-index: 1; 
+  left: 0;
+  top: 0;
+  width: 100%; 
+  height: 100%; 
+  overflow: auto; 
+  background-color: rgba(0,0,0,0.9); 
+}
+
+.modal-contenido-adoptar {
+  background-color: var(--second-color);
+  padding: 20px;
+  border-radius: 20px;
+  border: 1px solid none;
+  width: 90%;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.requisitosmascota {
+  font-size: 12px;
+  color: var(--first-color);
+  text-align: justify;
+}
+
+.cerrar-modal-adoptar {
+    color: var(--terciary-color);
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/*=========== SOLICITUD DE ADOPCIÓN ==========*/
+
+.formularioboco label {
+  color: var(--first-color);
+}
+
+/* Style inputs with type="text", select elements and textareas */
+input[type=text], select, textarea {
+  width: 100%; /* Full width */
+  padding: 12px; /* Some padding */ 
+  border: 1px solid var(--first-color); /* Gray border */
+  border-radius: 4px; /* Rounded borders */
+  box-sizing: border-box; /* Make sure that padding and width stays in place */
+  margin-top: 6px; /* Add a top margin */
+  margin-bottom: 16px; /* Bottom margin */
+  resize: vertical /* Allow the user to vertically resize the textarea (not horizontally) */
+}
+
+/* Style the submit button with a specific background color etc */
+input[type=submit] {
+  background-color: var(--first-color);
+  color: var(--second-color);
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* When moving the mouse over the submit button, add a darker green color */
+input[type=submit]:hover {
+  background-color: var(--first-color);
+}
+
+
+/*=============== PERFILES EQUIPO ===============*/
+
+/* COLUMNA EQUIPO BOCO */
+.column-boco{
+  float: left;
+  width: 33.33%;
+  padding: 10px 10px;
+}
+
+.perfilboco{
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  max-width: 300px;
+  margin: auto;
+  text-align: center;
+  font-size: 16px;
+  border-radius: 20px;
+  padding: 15px;
+  background-color: var(--second-color);
+}
+
+.perfilboco img{
+  border-radius: 20px;
+}
+
+.perfilboco h3{
+  color: var(--first-color);
+  font-size: 22px;
+}
+
+.titleboco{
+  color: grey;
+  font-size: 16px;
+}
+
+/*=============== COLUMNAS ASOCIACIONES ===============*/
+
+.column-asoc{
+  float: left;
+  width: 25%;
+  padding: 10px 10px;
+}
+
+.perfilasoc{
+  max-width: 100%;
+  margin: auto;
+  text-align: center;
+}
+
+
+/*=============== CONTACTO ========*/
+
+/* BARRA DE REDES SOCIALES */
+
+.contact-bar {
+  position: center;
+  top: 50%;
+}
+
+/* ESTILO DE ICONOS */
+.contact-bar a {
+  display: block;
+  text-align: center;
+  padding: 16px;
+  color: white;
+  font-size: 20px;
+}
+
+/* ESTILO DE BARRA */
+
+.google {
+  background: #dd4b39;
+  color: white;
+}
+
+.facebook {
+  background: #3B5998;
+  color: white;
+}
+
+.whatsapp {
+  background-color: #4FCE5D;
+  color: white;
+}
+
+.instagram {
+  background: #DD2A7B;
+  color: white;
+}
+
+.tiktok {
+  background: #000000;
+  color: white;
+}
+
+/*=============== TIENDA ===============*/
+
+/* COLUMNA PRODUCTOS BOCO */
+
+.column-producto{
+  float: left;
+  width: 33.33%;
+  padding: 10px 10px;
+}
+
+.productoboco{
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  max-width: 300px;
+  margin: auto;
+  text-align: center;
+  background-color: var(--second-color);
+  padding: 15px;
+  border-radius: 20px;
+}
+
+.productoboco img{
+  border-radius: 10px;
+}
+
+.productoboco h3{
+  color: var(--first-color);
+  font-size: 22px;
+}
+
+.titleproductoboco{
+  color: var(--first-color);
+  font-size: 16px;
+  text-align: left;
+}
+
+.productoboco button{
+  border: none;
+  outline: 0;
+  padding: 8px;
+  color: var(--second-color);
+  background-color: var(--first-color);
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+  font-size: 14px;
+  border-radius: 20px;
+}
+
+.precio{
+  color: var(--terciary-color);
+  font-size: 18px;
+}
+
+.nota{
+  font-size: 12px;
+  color: grey;
+  text-align: justify;
+  margin: 5px;
+}
+
+.botoncomprar {
+  border: none;
+  outline: 0;
+  padding: 12px;
+  color: white;
+  background-color: var(--terciary-color);
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+  font-size: 18px;
+  border-radius: 20px;
+  margin: 10px 0 0 0;
+}
+
+/*=============== DONAR ===============*/
+
+.donarcontainer{
+  text-align: center;
+}
+
+.donarcontainer h4{
+  text-align: justify;
+  font-size: 12px;
+  margin-top: 5px;
+}
+
+.donarcontainer button{
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 10px;
+  color: var(--second-color);
+  background-color: var(--first-color);
+  text-align: center;
+  cursor: pointer;
+  width: 50%;
+  font-size: 16px;
+  border-radius: 10px;
+  margin-top: 15px;
+}
+
+/*COPIAR LINK APP*/
+
+.containercompartirapp {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.copyfield{
+    display: flex;
+    align-items: center;
+    background-color: var(--first-color);
+    border-radius: 5px;
+}
+
+#link{
+    width: 100%;
+    padding: 12px 10px;
+    border: 1px solid var(--first-color);
+    background-color: var(--second-color);
+    border-radius: 5px;
+    font-size: 12px;
+    overflow-x: scroll;
+}
+#link::-webkit-scrollbar{
+    display: none;
+}
+
+#copy-btn{
+    color: var(--second-color);
+    padding: 0 20px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+/*=============== FOOTER ===============*/
+.footer {
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 70px;
+  background-color: none;
+  color: transparent;
+  text-align: center;
+}
+
+/*=============== BREAKPOINTS ===============*/
+
+@media screen and (max-width: 768px) {
+  .nav-btn {
+    display: none;
+  }
+}
+
+/* Responsive columns */
+@media screen and (max-width: 600px) {
+  .column {
+    width: 50%;
+    display: block;
+    margin-bottom: 20px;
+  }
+  .column-boco{
+    width: 50%;
+    display: block;
+    margin-bottom: 20px;
+  }
+  .column-asoc{
+  float: left;
+  width: 50%;
+  padding: 10px 10px;
+}
+.column-producto{
+  float: left;
+  width: 50%;
+  margin-bottom: 20px;
+}
+}
+
+/* For small devices */
+@media screen and (max-width: 320px) {
+  .nav {
+    zoom: .8;
+  }
+}
+
+/* For large devices */
+@media screen and (min-width: 968px) {
+  .container {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .nav {
+    zoom: 1.1;
+  }
+}
