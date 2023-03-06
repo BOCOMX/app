@@ -1,0 +1,48 @@
+{
+  "background_color": "#ffffff",
+  "description": "BOCO es una aplicación móvil creada para fomentar la adopción y cuidado de mascotas.",
+  "dir": "ltr",
+  "display": "standalone",
+  "name": "BOCO",
+  "orientation": "portrait",
+  "scope": "https://bocomx.github.io/app/bocoapp.html",
+  "short_name": "BOCO",
+  "start_url": "https://bocomx.github.io/app/bocoapp.html",
+  "theme_color": "#F9FAFF",
+  "categories": [
+    "lifestyle"
+  ],
+  "screenshots": [],
+  "icons": [
+    {
+      "src": "icons/icon-512x512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    },
+    {
+      "src": "icons/icon-152x152.png",
+      "type": "image/png",
+      "sizes": "152x152"
+    },
+    {
+      "src": "icons/icon-180x180.png",
+      "type": "image/png",
+      "sizes": "180x180"
+    },
+    {
+      "src": "icons/icon-167x167.png",
+      "type": "image/png",
+      "sizes": "167x167"
+    },
+    {
+      "src": "assets - detallesapp/og-image.png",
+      "type": "image/png",
+      "sizes": "1200x630"
+    }
+  ],
+  "shortcuts": [],
+  "lang": "es",
+  "display_override": [
+    "standalone"
+  ]
+}

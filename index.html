@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html dir="auto" lang="es">
+<head>
+	<meta charset="UTF-8" />
+
+	<!--=============== NO TRADUCIR ===============-->
+  <meta name="google" content="notranslate">
+
+	<title>BOCO</title>
+
+	<meta name="description" content="BOCO es una aplicación móvil creada para fomentar la adopción y cuidado de mascotas." />
+
+	<!--=============== PWA MANIFIESTO ===============-->
+
+	<link rel="manifest" href="manifest.json" >
+	<meta name="theme-color" content="#F9FAFF" >
+
+	<!--=============== ICONOS PWA IOS ===============-->
+
+	<link rel="apple-touch-icon" href="icons/icon-512x512.png">
+	<link rel="apple-touch-icon" sizes="152x152" href="icons/icon-152x152.png">
+	<link rel="apple-touch-icon" sizes="180x180" href="icons/icon-180x180.png">
+	<link rel="apple-touch-icon" sizes="167x167" href="icons/icon-167x167.png">
+
+	<!--=============== PANTALLA DE INICIO PWA IOS ===============-->
+
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<link href="pantalladeinicioapple/apple_splash_2048.png" sizes="2048x2732" rel="apple-touch-startup-image" />
+	<link href="pantalladeinicioapple/apple_splash_1668.png" sizes="1668x2224" rel="apple-touch-startup-image" />
+	<link href="pantalladeinicioapple/apple_splash_1536.png" sizes="1536x2048" rel="apple-touch-startup-image" />
+	<link href="pantalladeinicioapple/apple_splash_1125.png" sizes="1125x2436" rel="apple-touch-startup-image" />
+	<link href="pantalladeinicioapple/apple_splash_1242.png" sizes="1242x2208" rel="apple-touch-startup-image" />
+	<link href="pantalladeinicioapple/apple_splash_750.png" sizes="750x1334" rel="apple-touch-startup-image" />
+	<link href="pantalladeinicioapple/apple_splash_640.png" sizes="640x1136" rel="apple-touch-startup-image" />
+
+	<!--=============== BARRA NOTIFICACIONES PWA IOS ===============-->
+	<meta name="apple-mobile-web-app-status-bar-style" content="default">
+	<meta name="apple-mobile-web-app-tittle" content="BOCO">
+
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+	<link rel="icon" href="icons/web.png" />
+
+	<meta property="og:title" content="BOCO" />
+	<meta property="og:description" content="BOCO es una aplicación móvil creada para fomentar la adopción y cuidado de mascotas." />
+	<meta property="og:image" content="assets - detallesapp/og-image.png" />
+
+	<link rel="stylesheet" href="assets - detallesapp/tobi.css" />
+	<link rel="stylesheet" href="assets - detallesapp/style.css" />
+        
+        <script>
+    // Bloquear la rotación de pantalla en modo retrato
+    screen.orientation.lock('portrait');
+  </script>
+
+</head>
+	<body>
+		<main>
+<header class="app__header container">
+	<div class="app__logo-wrapper"> <img class="app__logo" src="assets - detallesapp/content/boco.png" alt="BOCO"></div>
+	<div class="app__infos">
+		<h1 class="app__name">BOCO</h1>
+		<p class="app__description">Adopción y cuidado de mascotas en la palma de tu mano. ¡Adopta y llénate de amor!</p>
+		<div class="app__buttons app__buttons--desktop">
+			<!--<a href="https://play.google.com/store" class="app__button-play" target="_blank" title="Get on Google Play">
+				<img src="assets - detallesapp/google-play-badge.png" alt="Get on Google Play">
+			</a>
+			<a href="https://www.apple.com/ios/app-store/" class="app__button-ios" target="_blank" title="Get on Appstore">
+				<img src="assets - detallesapp/ios-badge.svg" alt="Get on Appstore">
+			</a>
+			<a class="app__button-web">
+				<button id="install-btn"><img src="assets - detallesapp/pwa-badge.png" alt="Instalar BOCO PWA"></button>
+			</a>-->
+		</div>
+	</div>
+</header>
+<div class="app__buttons app__buttons--mobile container">
+	<!--<a href="https://play.google.com/store" class="app__button-play" target="_blank" title="Get on Google Play">
+		<img src="assets - detallesapp/google-play-badge.png" alt="Get on Google Play">
+	</a>
+	<a href="https://www.apple.com/ios/app-store/" class="app__button-ios" target="_blank" title="Get on Appstore">
+		<img src="assets - detallesapp/ios-badge.svg" alt="Get on Appstore">
+	</a>-->
+	<a class="app__button-web">
+		<button id="install-btn"><img src="assets - detallesapp/android.png" alt="Instalar BOCO ANDROID"></button>
+	</a>
+
+	<a class="app__button-web">
+		<button id="install-btn-apple"><img src="assets - detallesapp/apple.png" alt="Instalar BOCO IOS"></button>
+	</a>
+
+	<div id="modalapple">
+  <div id="modal-content-apple">
+    <p>Este sitio tiene una funcionalidad de aplicación. Es posible agregarla a la pantalla de inicio para una amplia experiencia y acceso fácil.</p>
+    <img src="assets - detallesapp/pasosios.png" alt="Pasos iOS">
+    <button id="close-btn-apple">Entendido</button>
+  </div>
+</div>
+
+</div>
+<section class="app__screenshots app__section">
+	<div class="container">
+		<h2 class="app__section-title">Capturas de pantalla</h2>
+	</div>
+	<div class="app__screenshots-wrapper container-desktop">
+		<div class="app__screenshots-list">
+
+			<a href="assets - detallesapp/content/screenshot.png" class="lightbox">
+				<img src="assets - detallesapp/content/screenshot.png" class="app__screenshot" alt="" />
+			</a>
+
+			<a href="assets - detallesapp/content/screenshot2.png" class="lightbox">
+				<img src="assets - detallesapp/content/screenshot2.png" class="app__screenshot" alt="" />
+			</a>
+
+			<a href="assets - detallesapp/content/screenshot3.png" class="lightbox">
+				<img src="assets - detallesapp/content/screenshot3.png" class="app__screenshot" alt="" />
+			</a>
+
+			<a href="assets - detallesapp/content/screenshot4.png" class="lightbox">
+				<img src="assets - detallesapp/content/screenshot4.png" class="app__screenshot" alt="" />
+			</a>
+
+			<a href="assets - detallesapp/content/screenshot5.png" class="lightbox">
+				<img src="assets - detallesapp/content/screenshot5.png" class="app__screenshot" alt="" />
+			</a>
+
+		</div>
+	</div>
+</section>
+<section class="app__fulldescription app__section container">
+	<h2 class="app__section-title">Acerca de esta app</h2>
+	<div class="app__fulldescription-content">
+		<p>BOCO fue desarrollada como aplicación web progresiva y cuenta con diferentes funcionalidades.
+Al igual que un proceso seguro de adopción, cortesía de nuestros expertos en el tema.</p>
+
+<h5>Versión: 2.4.1.2336</h5>
+
+<h4>Características:</h4>
+<ul>
+<li>Actualizaciones directamente en la nube</li>
+<li>Misma experiencia en Android &amp; iOS sin sacrificar calidad</li>
+<li>Pantalla dinámica para una mejor comodidad y experiencia visual</li>
+</ul>
+
+<h4>Novedades:</h4>
+<ul>
+<li>Tienda de accesorios</li>
+</ul>
+
+	</div>
+</section>
+<section class="app__featured app__section container">
+	<h2 class="app__section-title">Presentada por</h2>
+	<div class="app__featured-content">
+		<a href="https://www.instagram.com/fabiansoar/" target="_blank" class="app__featured-company"> 
+			<img src="assets - detallesapp/Fabián.png" class="app__featured-image">
+		</a> 
+		<a href="https://www.instagram.com/yoelfrocha/" target="_blank" class="app__featured-company"> 
+			<img src="assets - detallesapp/YoelRocha.png" class="app__featured-image">
+		</a> 
+		<a href="https://www.instagram.com/jedet_mua/" target="_blank" class="app__featured-company"> 
+			<img src="assets - detallesapp/LaJedetMUA.png" class="app__featured-image">
+		</a> 
+	</div>
+</section>
+		</main>
+		<footer class="footer">
+			<div class="container">
+				<div class="footer__container">
+					<p class="footer__love">
+						BOCO &copy; 2023 Todos los derechos reservados
+					</p>
+					<ul class="footer__links">
+
+							<li class="footer__link">
+								<a href="https://bocomx.github.io/web/">Inicio</a>
+							</li>
+
+							<li class="footer__link">
+								<a href="terminosycondiciones.html" target="_blank">Términos &amp; Condiciones</a>
+							</li>
+
+							<li class="footer__link">
+								<a href="politicadeprivacidad.html" target="_blank">Política de Privacidad</a>
+							</li>
+					</ul>
+				</div>
+			</div>
+		</footer>
+
+		<script type="text/javascript" src="assets - detallesapp/tobi.min.js" /></script>
+		<script>
+			window.onload = function () {
+				var tobi = new Tobi();
+			};
+		</script>
+
+		<script>
+			
+var modalapple = document.getElementById("modalapple");
+var btnapple = document.getElementById("install-btn-apple");
+var closeBtnapple = document.getElementById("close-btn-apple");
+
+btnapple.onclick = function() {
+  modalapple.style.display = "block";
+}
+
+closeBtnapple.onclick = function() {
+  modalapple.style.display = "none";
+}
+
+window.onclick = function(event) {
+  if (event.target == modalapple) {
+    modalapple.style.display = "none";
+  }
+}
+
+
+		</script>
+
+		<script>
+      const installBtn = document.querySelector('#install-btn');
+
+      installBtn.addEventListener('click', event => {
+        event.preventDefault();
+        installPwa();
+      });
+
+      function installPwa() {
+        const deferredPrompt = window.deferredPrompt;
+
+        if (deferredPrompt) {
+          deferredPrompt.prompt();
+
+          deferredPrompt.userChoice.then(choiceResult => {
+            if (choiceResult.outcome === 'accepted') {
+              console.log('El usuario ha aceptado la instalación de la PWA');
+            } else {
+              console.log('El usuario ha rechazado la instalación de la PWA');
+            }
+
+            window.deferredPrompt = null;
+          });
+        }
+      }
+
+      window.addEventListener('beforeinstallprompt', event => {
+        console.log('El evento beforeinstallprompt ha sido disparado');
+
+        event.preventDefault();
+        window.deferredPrompt = event;
+      });
+    </script>
+
+    <script>
+    	
+    	window.addEventListener('beforeunload', function() {
+  window.scrollTo(0, 0);
+});
+
+
+    </script>
+
+  </body>
+</html>

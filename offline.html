@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+    <html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+        <!--=============== NO TRADUCIR ===============-->
+        <meta name="google" content="notranslate">
+
+        <!--=============== REMIXICONS ===============-->
+        <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+
+        <!--==================== BOXICONS ====================-->
+        <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+        <!--=============== CSS ===============-->
+        <link rel="stylesheet" href="assets/css/styles.css">
+
+        <link rel="icon" href="assets/favicon.svg" />
+        
+        <title>BOCO V2.4.1.2333 (Desconectado)</title>
+
+    </head>
+    <body>
+        <!--=============== NAVBAR ===============-->
+        <nav class="nav">
+            <ul class="nav__list">
+                <a data-target="#inicio" class="nav__link active-link">
+                    <img src="assets/img/menu/home.svg">
+                    <span class="nav__name">
+                        Inicio
+                    </span>
+                </a>
+
+                <a data-target="#adoptar" class="nav__link">
+                    <img src="assets/img/menu/adoptar.svg">
+                    <span class="nav__name">
+                        Adoptar
+                    </span>
+                </a>
+
+                <a data-target="#team" class="nav__link">
+                    <img src="assets/img/menu/equipo.svg">
+                    <span class="nav__name">
+                        BOCO
+                    </span>
+                </a>
+
+                <a data-target="#tienda" class="nav__link">
+                    <img src="assets/img/menu/tienda.svg">
+                    <span class="nav__name">
+                        Tienda
+                    </span>
+                </a>
+
+                <a data-target="#donar" class="nav__link">
+                    <img src="assets/img/menu/donar.svg">
+                    <span class="nav__name">
+                        Donar
+                    </span>
+                </a>
+
+                <svg class="indicator" width="94" height="56" xmlns="http://www.w3.org/2000/svg">
+                    <ellipse cx="47" cy="28" rx="24" ry="28"/>
+                    <path d="M24 20C24 20 28 55.9999 48 56L0 55.9997C18 55.9998 24 20 24 20Z"/>
+                    <path d="M70 20C70 20 66 55.9999 46 56L94 55.9997C76 55.9998 70 20 70 20Z"/>
+                </svg>
+            </ul>
+        </nav>
+
+        <!--=============== ENCABEZADO ===============-->
+        <div class="header">
+                <a class="logo">BOCO</a>
+            <!--<div class="header-right">
+                <a class="btnicons"><img src="assets/img/menu/oscuro.svg"></a>
+            </div>-->
+        </div>
+
+        <!--=============== MAIN ===============-->
+        <main class="container">
+        <!--=============== PANTALLA INICIO ===============-->
+
+            <section data-content id="inicio" class="active-content">
+                
+                <!--==============================-->
+
+                <h2>Últimas noticias</h2>
+                <br>
+
+                <h3>¡Sin conexión!</h3>
+                <br>
+
+            <div class="containerloader">
+                <div class="loader"></div>
+            </div>
+                <br>
+
+            </section>
+
+            <!--=============== PANTALLA ADOPTAR ===============-->
+
+            <section data-content id="adoptar">
+                <h2>Encuentra un amigo</h2>
+                <br>
+                <div class="adoptarbtn_container" id="myDIV">
+                    <div><button class="btnmascot active" data-targetmascot="#perros">Perros</button></div>
+                    <div><button class="btnmascot" data-targetmascot="#gatos">Gatos</button></div>
+                </div>
+                <br>
+
+                <!--=============== PERROS ===============-->
+                <div data-contentmascot id="perros" class="active-btnmascot filtromascot">
+                    <h4><img src="assets/img/mascotas/iconos/filtro.svg"> Nombre: A - Z </h4>
+                    <br>
+
+                <h3>¡Sin conexión!</h3>
+                <br>
+
+            <div class="containerloader">
+                <div class="loader"></div>
+            </div>
+                <br>
+        </div>
+
+                <!--=============== GATOS ===============-->
+                <div data-contentmascot id="gatos" class="filtromascot">
+                    <h4><img src="assets/img/mascotas/iconos/filtro.svg"> Nombre: A - Z </h4>
+                    <br>
+
+                <h3>¡Sin conexión!</h3>
+                <br>
+
+            <div class="containerloader">
+                <div class="loader"></div>
+            </div>
+                <br>
+
+                <br>
+            </div>
+
+            </section>
+
+            <!--=============== PANTALLA BOCO ===============-->
+
+            <section data-content id="team">
+                <h2>Familia BOCO</h2>
+                <br>
+
+                <h3>¡Sin conexión!</h3>
+                <br>
+
+            <div class="containerloader">
+                <div class="loader"></div>
+            </div>
+                <br>
+
+                
+            </section>
+
+            <!--=============== VENTANA ARTICULOS ===============-->
+
+            <section data-content id="tienda">
+                <h2>Tienda</h2>
+                <br>
+
+                <h3>¡Sin conexión!</h3>
+                <br>
+
+            <div class="containerloader">
+                <div class="loader"></div>
+            </div>
+                <br>
+
+            </section>
+
+            <!--=============== VENTANA DONAR ===============-->
+
+            <section data-content id="donar">
+                <h2>Donaciones</h2>
+                <br>
+
+                <h3>¡Sin conexión!</h3>
+                <br>
+
+            <div class="containerloader">
+                <div class="loader"></div>
+            </div>
+                <br>
+
+            </section>
+        </main>
+        <br>
+        <div class="footer">
+                <p> </p>
+
+        <!--=============== MAIN JS ===============-->
+        <script src="assets/js/main2.js"></script>
+    </body>
+</html>
