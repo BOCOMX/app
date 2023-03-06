@@ -1,5 +1,5 @@
 .tobi {
-  background-color: rgba(26, 42, 58, 0.94);
+  background-color: rgba(0, 0, 0, 0.9);
   bottom: 0;
   box-sizing: border-box;
   contain: strict;
@@ -152,12 +152,12 @@
 
 .tobi > button svg {
   pointer-events: none;
-  stroke: #fff;
+  stroke: #FF678D;
   stroke-width: 1;
   stroke-linecap: square;
   stroke-linejoin: miter;
   fill: none;
-  color: #fff;
+  color: #FF678D;
 }
 
 .tobi > button:active, .tobi > button:focus, .tobi > button:hover {
@@ -204,13 +204,14 @@
 
 .tobi__counter {
   background-color: transparent;
-  color: #fff;
+  color: #FF678D;
   font-size: 1.11111em;
   left: 1em;
   line-height: 1;
   position: absolute;
   top: 2.22222em;
   z-index: 1;
+  font-weight: bold;
 }
 
 .tobi__counter[aria-hidden="true"] {
