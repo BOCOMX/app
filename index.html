@@ -53,6 +53,21 @@
     screen.orientation.lock('portrait');
   </script>
 
+<script>
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', function() {
+      navigator.serviceWorker.register('sw.js').then(function(registration) {
+        // registro exitoso
+        console.log('Service worker registrado exitosamente con el scope: ', registration.scope);
+      }, function(err) {
+        // registro fallido
+        console.log('El registro del service worker falló con el error: ', err);
+      });
+    });
+  }
+</script>
+
+
 </head>
 	<body>
 		<main>
