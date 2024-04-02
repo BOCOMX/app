@@ -8,7 +8,7 @@
 
 	<title>BOCO</title>
 
-	<meta name="description" content="BOCO es una aplicación móvil creada para fomentar la adopción y cuidado de mascotas." />
+	<meta name="description" content="BOCO es una aplicación móvil creada para fomentar la adopción responsable y el cuidado animal." />
 
 	<!--=============== PWA MANIFIESTO ===============-->
 
@@ -42,7 +42,7 @@
 	<link rel="icon" href="icons/web.png" />
 
 	<meta property="og:title" content="BOCO" />
-	<meta property="og:description" content="BOCO es una aplicación móvil creada para fomentar la adopción y cuidado de mascotas." />
+	<meta property="og:description" content="BOCO es una aplicación móvil creada para fomentar la adopción responsable y el cuidado animal." />
 	<meta property="og:image" content="assets - detallesapp/og-image.png" />
 
 	<link rel="stylesheet" href="assets - detallesapp/tobi.css" />
@@ -53,29 +53,14 @@
     screen.orientation.lock('portrait');
   </script>
 
-<script>
-  if ('serviceWorker' in navigator) {
-    window.addEventListener('load', function() {
-      navigator.serviceWorker.register('sw.js').then(function(registration) {
-        // registro exitoso
-        console.log('Service worker registrado exitosamente con el scope: ', registration.scope);
-      }, function(err) {
-        // registro fallido
-        console.log('El registro del service worker falló con el error: ', err);
-      });
-    });
-  }
-</script>
-
-
 </head>
 	<body>
 		<main>
 <header class="app__header container">
 	<div class="app__logo-wrapper"> <img class="app__logo" src="assets - detallesapp/content/boco.png" alt="BOCO"></div>
 	<div class="app__infos">
-		<h1 class="app__name">BOCO</h1>
-		<p class="app__description">Adopción y cuidado de mascotas en la palma de tu mano. ¡Adopta y llénate de amor!</p>
+		<h1 class="app__name">BOCO: Tu guía para mascotas</h1>
+		<p class="app__description">Descubre noticias y consejos sobre cuidado animal, encuentra los mejores veterinarios y productos para tus amigos peludos, ¡Todo en una sola aplicación!</p>
 		<div class="app__buttons app__buttons--desktop">
 			<!--<a href="https://play.google.com/store" class="app__button-play" target="_blank" title="Get on Google Play">
 				<img src="assets - detallesapp/google-play-badge.png" alt="Get on Google Play">
@@ -124,7 +109,7 @@
 				<img src="assets - detallesapp/content/screenshot.png" class="app__screenshot" alt="" />
 			</a>
 
-			<a href="assets - detallesapp/content/screenshot2.png" class="lightbox">
+			<!--<a href="assets - detallesapp/content/screenshot2.png" class="lightbox">
 				<img src="assets - detallesapp/content/screenshot2.png" class="app__screenshot" alt="" />
 			</a>
 
@@ -138,7 +123,7 @@
 
 			<a href="assets - detallesapp/content/screenshot5.png" class="lightbox">
 				<img src="assets - detallesapp/content/screenshot5.png" class="app__screenshot" alt="" />
-			</a>
+			</a>-->
 
 		</div>
 	</div>
@@ -146,10 +131,9 @@
 <section class="app__fulldescription app__section container">
 	<h2 class="app__section-title">Acerca de esta app</h2>
 	<div class="app__fulldescription-content">
-		<p>BOCO fue desarrollada como aplicación web progresiva y cuenta con diferentes funcionalidades.
-Al igual que un proceso seguro de adopción, cortesía de nuestros expertos en el tema.</p>
+		<p>BOCO está aquí para hacer que el cuidado de tus amigos peludos sea más accesible que nunca. Fue desarrollada como aplicación web progresiva y cuenta con diferentes funcionalidades.</p>
 
-<h5>Versión: 2.4.1.2336</h5>
+<h5>Versión: 3.6.2.2441</h5>
 
 <h4>Características:</h4>
 <ul>
@@ -160,7 +144,8 @@ Al igual que un proceso seguro de adopción, cortesía de nuestros expertos en e
 
 <h4>Novedades:</h4>
 <ul>
-<li>Tienda de accesorios</li>
+<li>¡Encuentra veterinarios cerca de ti!</li>
+<li>Nuevo apartado: Videoconsejos para el cuidado de mascotas</li>
 </ul>
 
 	</div>
@@ -184,7 +169,7 @@ Al igual que un proceso seguro de adopción, cortesía de nuestros expertos en e
 			<div class="container">
 				<div class="footer__container">
 					<p class="footer__love">
-						BOCO &copy; 2023 Todos los derechos reservados
+						BOCO &copy; 2024 Todos los derechos reservados.
 					</p>
 					<ul class="footer__links">
 
