@@ -19,7 +19,19 @@
 
         <link rel="icon" href="assets/favicon.svg" />
         
-        <title>BOCO V2.4.1.2336</title>
+        <title>BOCO V3.6.2.2441</title>
+
+        <script>
+  if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function() {
+    navigator.serviceWorker.register('/sw.js').then(function(registration) {
+      console.log('Service Worker registrado con éxito con alcance:', registration.scope);
+    }, function(err) {
+      console.log('Error al registrar el Service Worker:', err);
+    });
+  });
+}
+</script>
 
     </head>
     <body>
@@ -33,10 +45,10 @@
                     </span>
                 </a>
 
-                <a data-target="#adoptar" class="nav__link">
-                    <img src="assets/img/menu/adoptar.svg">
+                <a data-target="#veterinarios" class="nav__link">
+                    <img src="assets/img/menu/veterinarios.svg">
                     <span class="nav__name">
-                        Adoptar
+                        Med. Vet.
                     </span>
                 </a>
 
@@ -47,17 +59,17 @@
                     </span>
                 </a>
 
+                <a data-target="#consejos" class="nav__link">
+                    <img src="assets/img/menu/consejos.svg">
+                    <span class="nav__name">
+                        Consejos
+                    </span>
+                </a>
+
                 <a data-target="#tienda" class="nav__link">
                     <img src="assets/img/menu/tienda.svg">
                     <span class="nav__name">
                         Tienda
-                    </span>
-                </a>
-
-                <a data-target="#donar" class="nav__link">
-                    <img src="assets/img/menu/donar.svg">
-                    <span class="nav__name">
-                        Donar
                     </span>
                 </a>
 
@@ -147,716 +159,13 @@
 
             </section>
 
-            <!--=============== PANTALLA ADOPTAR ===============-->
+            <!--=============== PANTALLA CONSEJOS DE CUIDADO ===============-->
 
-            <section data-content id="adoptar">
-                <h2>Encuentra un amigo</h2>
+            <section data-content id="consejos">
+                <h2>Consejos de cuidado animal</h2>
                 <br>
-                <div class="adoptarbtn_container" id="myDIV">
-                    <div><button class="btnmascot active" data-targetmascot="#perros">Perros</button></div>
-                    <div><button class="btnmascot" data-targetmascot="#gatos">Gatos</button></div>
-                </div>
-                <br>
-
-                <!--=============== PERROS ===============-->
-                <div data-contentmascot id="perros" class="active-btnmascot filtromascot">
-                    <h4><img src="assets/img/mascotas/iconos/filtro.svg"> Nombre: A - Z </h4>
-                    <br>
-
-                <!--=============== REQUISITOS ===============-->
-                <div class="requisitosadoptar">
-                    <button onclick="mostrarModala()">Ver requisitos de adopción</button>
-                </div>
                 
-                <!--=============== REQUISITOS MODAL ===============-->
-                <div id="miModala" class="modaladoptar">
-                <div class="modal-contenido-adoptar">
-                     <span class="cerrar-modal-adoptar" onclick="cerrarModala()">&times;</span>
-                    <h3>Requisitos de adopción</h3>
-                    <br>
-                    <li class="requisitosmascota">Ser mayor de edad (o contar con el permiso de padres).</li>
-                    <li class="requisitosmascota">Casa propia.</li>
-                    <li class="requisitosmascota">Permitir monitoreo con visitas o vía WhatsApp.</li>
-                    <li class="requisitosmascota">Cumplir con la esterilización.</li>
-                    <li class="requisitosmascota">Pagar el costo de su primer vacuna.</li>
-                    <li class="requisitosmascota">Realizar una visita a su domicilio.</li>
-                    <li class="requisitosmascota">Copia de Credencial de Elector</li>
-                    <li class="requisitosmascota">Copia de comprobante de domicilio</li>
-                </div>
-                </div>
-                <br>
-
-                <div class="row">
-
-                <!--======================= PERFIL ABUELO =======================-->
-                <div class="column">
-
-                <div class="perfilmascot"><img src="assets/img/mascotas/perros/HUEYAPAN/ABUELO/1.jpg" alt="Abuelo" style="width:100%">
-                <h3>Abuelo</h3>
-                <!--<p class="logomascot"><img src="assets/img/mascotas/iconos/hueyapan.svg"></p>-->
-                <button id="modal-btn-1">Ver perfil</button>
-
-                </div>
-                </div>
-
-                <!-- Modal Abuelo -->
-
-                <div id="modal-1" class="modal">
-                <div class="modal-content">
-                <span class="close">&times;</span>
-                <h2>Abuelo</h2>
-
-                <!-- FOTOS ABUELO -->
-
-                <div class="slideshow-container" id="slideshow-container-1">
-                <div class="mySlidesfotos">
-                    <img src="assets/img/mascotas/perros/HUEYAPAN/ABUELO/1.jpg" style="width:100%">
-                </div>
-
-                <div class="mySlidesfotos">
-                 <img src="assets/img/mascotas/perros/HUEYAPAN/ABUELO/2.jpg" style="width:100%">
-                </div>
-
-                <div class="mySlidesfotos">
-                 <img src="assets/img/mascotas/perros/HUEYAPAN/ABUELO/3.jpg" style="width:100%">
-                </div>
-
-                <div class="rowfotos">
-                    
-                    <img class="demofotos cursorfotos" src="assets/img/mascotas/perros/HUEYAPAN/ABUELO/1.jpg" onclick="currentSlide(1, 0)">
-                    
-    
-                    
-                     <img class="demofotos cursorfotos" src="assets/img/mascotas/perros/HUEYAPAN/ABUELO/2.jpg"  onclick="currentSlide(2, 0)">
-                    
-    
-                    
-                    <img class="demofotos cursorfotos" src="assets/img/mascotas/perros/HUEYAPAN/ABUELO/3.jpg"  onclick="currentSlide(3, 0)">
-                    
-
-                </div>
-                </div>
-
-                <p class="tituloperfilmascota">Descripción:</p>
-                <p class="descripcionperfilmascota">Un lomito sin dientes, comelón y tranquilo... bueno solo se aloca a la hora de comer.</p>
-                <p class="tituloperfilmascota">Datos:</p>
-                <li class="infoperfilmascota">Sexo: Macho</li>
-                <li class="infoperfilmascota">Etapa: Adulto</li>
-                <p class="logomascota">Hueyapan</p>
-                <br>
-                <p class="requisitostitulo">Solicitud de adopción</p>
-                <br>
-
-            <div class="formularioboco">
-                <form action="https://formsubmit.co/bocomx.oficial@gmail.com" method="POST">
-
-                <input type="hidden" value="Abuelo" name="Mascota">
-
-                <label for="Nombre">Nombre completo</label>
-                <input type="text" name="Nombre" required>
-
-                <label for="Edad">Edad</label>
-                <input type="text" name="Edad" required>
-
-                <label for="Número">Número telefónico</label>
-                <input type="text" name="Número" required>
-
-                <label for="Correo">Correo electrónico</label>
-                <input type="text" name="Correo" required>
-
-                <label for="Casa propia">¿Casa propia?</label>
-                <select name="Casa propia" required>
-                <option>Si</option>
-                <option>No</option>
-                </select>
-
-                <label for="Mensaje">¿Porqué deseas adoptar?</label>
-                <textarea name="Mensaje" required style="height:200px"></textarea>
-
-                <div class="solicitaradopcion">
-                    <button type="submit">Solicitar adopción</button>
-                </div>
-
-                        <input type="hidden" name="_captcha" value="false">
-                        <input type="hidden" name="_next" value="https://bocomx.github.io/app/bocoapp.html">
-                </form>
-            </div>
-                
-                </div>
-                </div>
-
-                <!--======================= PERFIL DONA =======================-->
-
-                <div class="column">
-
-                <div class="perfilmascot"><img src="assets/img/mascotas/perros/HUEYAPAN/DONA/1.jpg" alt="Dona" style="width:100%">
-                <h3>Dona</h3>
-                <!--<p class="logomascot"><img src="assets/img/mascotas/iconos/hueyapan.svg"></p>-->
-                <button id="modal-btn-2">Ver perfil</button>
-
-                </div>
-                </div>
-
-                <!-- MODAL DONA -->
-                <div id="modal-2" class="modal">
-                <div class="modal-content">
-                <span class="close">&times;</span>
-                <h2>Dona</h2>
-
-                <!-- FOTOS DONA -->
-
-                <div class="slideshow-container" id="slideshow-container-2">
-                <div class="mySlidesfotos">
-                    <img src="assets/img/mascotas/perros/HUEYAPAN/DONA/1.jpg" style="width:100%">
-                </div>
-
-                <div class="mySlidesfotos">
-                 <img src="assets/img/mascotas/perros/HUEYAPAN/DONA/2.jpg" style="width:100%">
-                </div>
-
-                <div class="rowfotos">
-                    
-                    <img class="demofotos cursorfotos" src="assets/img/mascotas/perros/HUEYAPAN/DONA/1.jpg" onclick="currentSlide(1, 1)">
-                    
-    
-                    
-                     <img class="demofotos cursorfotos" src="assets/img/mascotas/perros/HUEYAPAN/DONA/2.jpg"  onclick="currentSlide(2, 1)">
-                    
-                </div>
-                </div>
-
-                <p class="tituloperfilmascota">Descripción:</p>
-                <p class="descripcionperfilmascota">Su nombre viene de "Dona de azucar", es una perrita bastante cariñosa y dulce, ama jugar y convivir con otros animales, además tiene el talento de doblar una oreja y mantener la otra arriba.</p>
-                <p class="tituloperfilmascota">Datos:</p>
-                <li class="infoperfilmascota">Sexo: Hembra</li>
-                <li class="infoperfilmascota">Etapa: Adulto</li>
-                <li class="infoperfilmascota">Esterilizada</li>
-                <p class="logomascota">Hueyapan</p>
-                <br>
-                <p class="requisitostitulo">Solicitud de adopción</p>
-                <br>
-
-            <div class="formularioboco">
-                <form action="https://formsubmit.co/bocomx.oficial@gmail.com" method="POST">
-
-                <input type="hidden" value="Dona" name="Mascota">
-
-                <label for="Nombre">Nombre completo</label>
-                <input type="text" name="Nombre" required>
-
-                <label for="Edad">Edad</label>
-                <input type="text" name="Edad" required>
-
-                <label for="Número">Número telefónico</label>
-                <input type="text" name="Número" required>
-
-                <label for="Correo">Correo electrónico</label>
-                <input type="text" name="Correo" required>
-
-                <label for="Casa propia">¿Casa propia?</label>
-                <select name="Casa propia" required>
-                <option>Si</option>
-                <option>No</option>
-                </select>
-
-                <label for="Mensaje">¿Porqué deseas adoptar?</label>
-                <textarea name="Mensaje" required style="height:200px"></textarea>
-
-                <div class="solicitaradopcion">
-                    <button type="submit">Solicitar adopción</button>
-                </div>
-
-                        <input type="hidden" name="_captcha" value="false">
-                        <input type="hidden" name="_next" value="https://bocomx.github.io/app/bocoapp.html">
-                </form>
-            </div>
-
-                </div>
-                </div>
-
-                <!--======================= PERFIL FLACA =======================-->
-
-                <div class="column">
-
-                <div class="perfilmascot"><img src="assets/img/mascotas/perros/HUEYAPAN/FLACA/1.jpg" alt="Flaca" style="width:100%">
-                <h3>Flaca</h3>
-                <!--<p class="logomascot"><img src="assets/img/mascotas/iconos/hueyapan.svg"></p>-->
-                <button id="modal-btn-3">Ver perfil</button>
-                </div>
-                </div>
-
-                <!-- MODAL FLACA -->
-                <div id="modal-3" class="modal">
-                <div class="modal-content">
-                <span class="close">&times;</span>
-                <h2>Flaca</h2>
-
-                <!-- FOTOS FLACA -->
-
-                <div class="slideshow-container" id="slideshow-container-3">
-                <div class="mySlidesfotos">
-                    <img src="assets/img/mascotas/perros/HUEYAPAN/FLACA/1.jpg" style="width:100%">
-                </div>
-
-                <div class="mySlidesfotos">
-                 <img src="assets/img/mascotas/perros/HUEYAPAN/FLACA/2.jpg" style="width:100%">
-                </div>
-
-                <div class="mySlidesfotos">
-                 <img src="assets/img/mascotas/perros/HUEYAPAN/FLACA/3.jpg" style="width:100%">
-                </div>
-
-                <div class="rowfotos">
-                    
-                    <img class="demofotos cursorfotos" src="assets/img/mascotas/perros/HUEYAPAN/FLACA/1.jpg" onclick="currentSlide(1, 2)">
-                    
-                     <img class="demofotos cursorfotos" src="assets/img/mascotas/perros/HUEYAPAN/FLACA/2.jpg"  onclick="currentSlide(2, 2)">
-
-                     <img class="demofotos cursorfotos" src="assets/img/mascotas/perros/HUEYAPAN/FLACA/3.jpg"  onclick="currentSlide(3, 2)">
-                    
-                </div>
-                </div>
-
-                <p class="tituloperfilmascota">Descripción:</p>
-                <p class="descripcionperfilmascota">Una perrita bastante tranquila y amigable... aunque gruñona a la hora de comer.</p>
-                <p class="tituloperfilmascota">Datos:</p>
-                <li class="infoperfilmascota">Sexo: Hembra</li>
-                <li class="infoperfilmascota">Etapa: Adulto</li>
-                <li class="infoperfilmascota">Esterilizada</li>
-                <p class="logomascota">Hueyapan</p>
-                <br>
-                <p class="requisitostitulo">Solicitud de adopción</p>
-                <br>
-
-            <div class="formularioboco">
-                <form action="https://formsubmit.co/bocomx.oficial@gmail.com" method="POST">
-
-                <input type="hidden" value="Flaca" name="Mascota">
-
-                <label for="Nombre">Nombre completo</label>
-                <input type="text" name="Nombre" required>
-
-                <label for="Edad">Edad</label>
-                <input type="text" name="Edad" required>
-
-                <label for="Número">Número telefónico</label>
-                <input type="text" name="Número" required>
-
-                <label for="Correo">Correo electrónico</label>
-                <input type="text" name="Correo" required>
-
-                <label for="Casa propia">¿Casa propia?</label>
-                <select name="Casa propia" required>
-                <option>Si</option>
-                <option>No</option>
-                </select>
-
-                <label for="Mensaje">¿Porqué deseas adoptar?</label>
-                <textarea name="Mensaje" required style="height:200px"></textarea>
-
-                <div class="solicitaradopcion">
-                    <button type="submit">Solicitar adopción</button>
-                </div>
-
-                <input type="hidden" name="_captcha" value="false">
-                <input type="hidden" name="_next" value="https://bocomx.github.io/app/bocoapp.html">
-                </form>
-            </div>
-
-                </div>
-                </div>
-
-                <!--======================= PERFIL JACK =======================-->
-
-                <div class="column">
-
-                <div class="perfilmascot"><img src="assets/img/mascotas/perros/HUEYAPAN/JACK/1.jpg" alt="Jack" style="width:100%">
-                <h3>Jack</h3>
-                <!--<p class="logomascot"><img src="assets/img/mascotas/iconos/hueyapan.svg"></p>-->
-                <button id="modal-btn-4">Ver perfil</button>
-                </div>
-                </div>
-
-                <!-- MODAL JACK -->
-                <div id="modal-4" class="modal">
-                <div class="modal-content">
-                <span class="close">&times;</span>
-                <h2>Jack</h2>
-
-                <!-- FOTOS JACK -->
-
-                <div class="slideshow-container" id="slideshow-container-4">
-                <div class="mySlidesfotos">
-                    <img src="assets/img/mascotas/perros/HUEYAPAN/JACK/1.jpg" style="width:100%">
-                </div>
-
-                <div class="mySlidesfotos">
-                 <img src="assets/img/mascotas/perros/HUEYAPAN/JACK/2.jpg" style="width:100%">
-                </div>
-
-                <div class="mySlidesfotos">
-                 <img src="assets/img/mascotas/perros/HUEYAPAN/JACK/3.jpg" style="width:100%">
-                </div>
-
-                <div class="rowfotos">
-                    
-                    <img class="demofotos cursorfotos" src="assets/img/mascotas/perros/HUEYAPAN/JACK/1.jpg" onclick="currentSlide(1, 3)">
-                    
-                     <img class="demofotos cursorfotos" src="assets/img/mascotas/perros/HUEYAPAN/JACK/2.jpg"  onclick="currentSlide(2, 3)">
-
-                     <img class="demofotos cursorfotos" src="assets/img/mascotas/perros/HUEYAPAN/JACK/3.jpg"  onclick="currentSlide(3, 3)">
-                    
-                </div>
-                </div>
-
-                <p class="tituloperfilmascota">Descripción:</p>
-                <p class="descripcionperfilmascota">Un lomito bastante obediente, con una actitud algo territorial pero que le encanta convivir con las personas.</p>
-                <p class="tituloperfilmascota">Datos:</p>
-                <li class="infoperfilmascota">Sexo: Macho</li>
-                <li class="infoperfilmascota">Etapa: Adulto</li>
-                <li class="infoperfilmascota">Esterilizado</li>
-                <p class="logomascota">Hueyapan</p>
-                <br>
-                <p class="requisitostitulo">Solicitud de adopción</p>
-                <br>
-
-            <div class="formularioboco">
-                <form action="https://formsubmit.co/bocomx.oficial@gmail.com" method="POST">
-
-                <input type="hidden" value="Jack" name="Mascota">
-
-                <label for="Nombre">Nombre completo</label>
-                <input type="text" name="Nombre" required>
-
-                <label for="Edad">Edad</label>
-                <input type="text" name="Edad" required>
-
-                <label for="Número">Número telefónico</label>
-                <input type="text" name="Número" required>
-
-                <label for="Correo">Correo electrónico</label>
-                <input type="text" name="Correo" required>
-
-                <label for="Casa propia">¿Casa propia?</label>
-                <select name="Casa propia" required>
-                <option>Si</option>
-                <option>No</option>
-                </select>
-
-                <label for="Mensaje">¿Porqué deseas adoptar?</label>
-                <textarea name="Mensaje" required style="height:200px"></textarea>
-
-                <div class="solicitaradopcion">
-                    <button type="submit">Solicitar adopción</button>
-                </div>
-
-                <input type="hidden" name="_captcha" value="false">
-                <input type="hidden" name="_next" value="https://bocomx.github.io/app/bocoapp.html">
-                </form>
-            </div>
-
-                </div>
-                </div>
-
-                <!--======================= PERFIL LUNA =======================-->
-
-                <div class="column">
-
-                <div class="perfilmascot"><img src="assets/img/mascotas/perros/HUEYAPAN/LUNA/1.jpg" alt="Luna" style="width:100%">
-                <h3>Luna</h3>
-                <!--<p class="logomascot"><img src="assets/img/mascotas/iconos/hueyapan.svg"></p>-->
-                <button id="modal-btn-5">Ver perfil</button>
-                </div>
-                </div>
-
-                <!-- MODAL LUNA -->
-                <div id="modal-5" class="modal">
-                <div class="modal-content">
-                <span class="close">&times;</span>
-                <h2>Luna</h2>
-
-                <!-- FOTOS LUNA -->
-
-                <div class="slideshow-container" id="slideshow-container-5">
-                <div class="mySlidesfotos">
-                    <img src="assets/img/mascotas/perros/HUEYAPAN/LUNA/1.jpg" style="width:100%">
-                </div>
-
-                <div class="mySlidesfotos">
-                 <img src="assets/img/mascotas/perros/HUEYAPAN/LUNA/2.jpg" style="width:100%">
-                </div>
-
-                <div class="mySlidesfotos">
-                 <img src="assets/img/mascotas/perros/HUEYAPAN/LUNA/3.jpg" style="width:100%">
-                </div>
-
-                <div class="rowfotos">
-                    
-                    <img class="demofotos cursorfotos" src="assets/img/mascotas/perros/HUEYAPAN/LUNA/1.jpg" onclick="currentSlide(1, 4)">
-                    
-                     <img class="demofotos cursorfotos" src="assets/img/mascotas/perros/HUEYAPAN/LUNA/2.jpg"  onclick="currentSlide(2, 4)">
-
-                     <img class="demofotos cursorfotos" src="assets/img/mascotas/perros/HUEYAPAN/LUNA/3.jpg"  onclick="currentSlide(3, 4)">
-                    
-                </div>
-                </div>
-
-                <p class="tituloperfilmascota">Descripción:</p>
-                <p class="descripcionperfilmascota">Es muy imperativa, le gusta jugar aunque a veces suele ser un poco revoltosa...</p>
-                <p class="tituloperfilmascota">Datos:</p>
-                <li class="infoperfilmascota">Sexo: Hembra</li>
-                <li class="infoperfilmascota">Etapa: Cachorro</li>
-                <li class="infoperfilmascota">Esterilizada</li>
-                <p class="logomascota">Hueyapan</p>
-                <br>
-                <p class="requisitostitulo">Solicitud de adopción</p>
-                <br>
-
-            <div class="formularioboco">
-                <form action="https://formsubmit.co/bocomx.oficial@gmail.com" method="POST">
-
-                <input type="hidden" value="Luna" name="Mascota">
-
-                <label for="Nombre">Nombre completo</label>
-                <input type="text" name="Nombre" required>
-
-                <label for="Edad">Edad</label>
-                <input type="text" name="Edad" required>
-
-                <label for="Número">Número telefónico</label>
-                <input type="text" name="Número" required>
-
-                <label for="Correo">Correo electrónico</label>
-                <input type="text" name="Correo" required>
-
-                <label for="Casa propia">¿Casa propia?</label>
-                <select name="Casa propia" required>
-                <option>Si</option>
-                <option>No</option>
-                </select>
-
-                <label for="Mensaje">¿Porqué deseas adoptar?</label>
-                <textarea name="Mensaje" required style="height:200px"></textarea>
-
-                <div class="solicitaradopcion">
-                    <button type="submit">Solicitar adopción</button>
-                </div>
-
-                <input type="hidden" name="_captcha" value="false">
-                <input type="hidden" name="_next" value="https://bocomx.github.io/app/bocoapp.html">
-                </form>
-            </div>
-
-                </div>
-                </div>
-
-                <!--======================= PERFIL ROKI =======================-->
-
-                <div class="column">
-
-                <div class="perfilmascot"><img src="assets/img/mascotas/perros/HUEYAPAN/ROKI/1.jpg" alt="Roki" style="width:100%">
-                <h3>Roki</h3>
-                <!--<p class="logomascot"><img src="assets/img/mascotas/iconos/hueyapan.svg"></p>-->
-                <button id="modal-btn-6">Ver perfil</button>
-                </div>
-                </div>
-
-                <!-- MODAL ROKI -->
-                <div id="modal-6" class="modal">
-                <div class="modal-content">
-                <span class="close">&times;</span>
-                <h2>Roki</h2>
-
-                <!-- FOTOS ROKI -->
-
-                <div class="slideshow-container" id="slideshow-container-6">
-                <div class="mySlidesfotos">
-                    <img src="assets/img/mascotas/perros/HUEYAPAN/ROKI/1.jpg" style="width:100%">
-                </div>
-
-                <div class="mySlidesfotos">
-                 <img src="assets/img/mascotas/perros/HUEYAPAN/ROKI/2.jpg" style="width:100%">
-                </div>
-
-                <div class="rowfotos">
-                    
-                    <img class="demofotos cursorfotos" src="assets/img/mascotas/perros/HUEYAPAN/ROKI/1.jpg" onclick="currentSlide(1, 5)">
-                    
-                     <img class="demofotos cursorfotos" src="assets/img/mascotas/perros/HUEYAPAN/ROKI/2.jpg"  onclick="currentSlide(2, 5)">
-                    
-                </div>
-                </div>
-
-                <p class="tituloperfilmascota">Descripción:</p>
-                <p class="descripcionperfilmascota">Le lleva algo de tiempo convivir pero cuando lo hace es totalmente obediente. Le encantan los paseos y las caricias.</p>
-                <p class="tituloperfilmascota">Datos:</p>
-                <li class="infoperfilmascota">Sexo: Macho</li>
-                <li class="infoperfilmascota">Etapa: Adulto</li>
-                <li class="infoperfilmascota">Esterilizado</li>
-                <p class="logomascota">Hueyapan</p>
-                <br>
-                <p class="requisitostitulo">Solicitud de adopción</p>
-                <br>
-
-            <div class="formularioboco">
-                <form action="https://formsubmit.co/bocomx.oficial@gmail.com" method="POST">
-
-                <input type="hidden" value="Roki" name="Mascota">
-
-                <label for="Nombre">Nombre completo</label>
-                <input type="text" name="Nombre" required>
-
-                <label for="Edad">Edad</label>
-                <input type="text" name="Edad" required>
-
-                <label for="Número">Número telefónico</label>
-                <input type="text" name="Número" required>
-
-                <label for="Correo">Correo electrónico</label>
-                <input type="text" name="Correo" required>
-
-                <label for="Casa propia">¿Casa propia?</label>
-                <select name="Casa propia" required>
-                <option>Si</option>
-                <option>No</option>
-                </select>
-
-                <label for="Mensaje">¿Porqué deseas adoptar?</label>
-                <textarea name="Mensaje" required style="height:200px"></textarea>
-
-                <div class="solicitaradopcion">
-                    <button type="submit">Solicitar adopción</button>
-                </div>
-
-                <input type="hidden" name="_captcha" value="false">
-                <input type="hidden" name="_next" value="https://bocomx.github.io/app/bocoapp.html">
-                </form>
-            </div>
-
-                </div>
-                </div>
-
-                <!--======================= SABANA =======================-->
-
-                <div class="column">
-
-                <div class="perfilmascot"><img src="assets/img/mascotas/perros/HUEYAPAN/SABANA/1.jpg" alt="Sabana" style="width:100%">
-                <h3>Sabana</h3>
-                <!--<p class="logomascot"><img src="assets/img/mascotas/iconos/hueyapan.svg"></p>-->
-                <button id="modal-btn-7">Ver perfil</button>
-                </div>
-                </div>
-
-                <!-- MODAL SABANA -->
-                <div id="modal-7" class="modal">
-                <div class="modal-content">
-                <span class="close">&times;</span>
-                <h2>Sabana</h2>
-
-                <!-- FOTOS SABANA -->
-
-                <div class="slideshow-container" id="slideshow-container-7">
-                <div class="mySlidesfotos">
-                    <img src="assets/img/mascotas/perros/HUEYAPAN/SABANA/1.jpg" style="width:100%">
-                </div>
-
-                <div class="mySlidesfotos">
-                 <img src="assets/img/mascotas/perros/HUEYAPAN/SABANA/2.jpg" style="width:100%">
-                </div>
-
-                <div class="rowfotos">
-                    
-                    <img class="demofotos cursorfotos" src="assets/img/mascotas/perros/HUEYAPAN/SABANA/1.jpg" onclick="currentSlide(1, 6)">
-                    
-                     <img class="demofotos cursorfotos" src="assets/img/mascotas/perros/HUEYAPAN/SABANA/2.jpg"  onclick="currentSlide(2, 6)">
-                    
-                </div>
-                </div>
-
-                <p class="tituloperfilmascota">Descripción:</p>
-                <p class="descripcionperfilmascota">Excelente cuidadora territorial, sobre todo a la hora de comer, convive bastante bien con otros animales y más si se trata de jugar. Tiene unos hermosos ojos.</p>
-                <p class="tituloperfilmascota">Datos:</p>
-                <li class="infoperfilmascota">Sexo: Hembra</li>
-                <li class="infoperfilmascota">Etapa: Adulto-Joven</li>
-                <li class="infoperfilmascota">Esterilizada</li>
-                <p class="logomascota">Hueyapan</p>
-                <br>
-                <p class="requisitostitulo">Solicitud de adopción</p>
-                <br>
-
-            <div class="formularioboco">
-                <form action="https://formsubmit.co/bocomx.oficial@gmail.com" method="POST">
-
-                <input type="hidden" value="Sabana" name="Mascota">
-
-                <label for="Nombre">Nombre completo</label>
-                <input type="text" name="Nombre" required>
-
-                <label for="Edad">Edad</label>
-                <input type="text" name="Edad" required>
-
-                <label for="Número">Número telefónico</label>
-                <input type="text" name="Número" required>
-
-                <label for="Correo">Correo electrónico</label>
-                <input type="text" name="Correo" required>
-
-                <label for="Casa propia">¿Casa propia?</label>
-                <select name="Casa propia" required>
-                <option>Si</option>
-                <option>No</option>
-                </select>
-
-                <label for="Mensaje">¿Porqué deseas adoptar?</label>
-                <textarea name="Mensaje" required style="height:200px"></textarea>
-
-                <div class="solicitaradopcion">
-                    <button type="submit">Solicitar adopción</button>
-                </div>
-
-                <input type="hidden" name="_captcha" value="false">
-                <input type="hidden" name="_next" value="https://bocomx.github.io/app/bocoapp.html">
-                </form>
-            </div>
-
-                </div>
-                </div>
-            </div>
-        </div>
-
-                <!--=============== GATOS ===============-->
-                <div data-contentmascot id="gatos" class="filtromascot">
-                    <h4><img src="assets/img/mascotas/iconos/filtro.svg"> Nombre: A - Z </h4>
-                    <br>
-                    <!--=============== REQUISITOS ===============-->
-                <div class="requisitosadoptar">
-                    <button onclick="mostrarModalb()">Ver requisitos de adopción</button>
-                </div>
-                
-                <!--=============== REQUISITOS MODAL ===============-->
-                <div id="miModalb" class="modaladoptar">
-                <div class="modal-contenido-adoptar">
-                     <span class="cerrar-modal-adoptar" onclick="cerrarModalb()">&times;</span>
-                    <h3>Requisitos de adopción</h3>
-                    <br>
-                    <li class="requisitosmascota">Ser mayor de edad (o contar con el permiso de padres).</li>
-                    <li class="requisitosmascota">Casa propia.</li>
-                    <li class="requisitosmascota">Permitir monitoreo con visitas o vía WhatsApp.</li>
-                    <li class="requisitosmascota">Cumplir con la esterilización.</li>
-                    <li class="requisitosmascota">Pagar el costo de su primer vacuna.</li>
-                    <li class="requisitosmascota">Realizar una visita a su domicilio.</li>
-                    <li class="requisitosmascota">Copia de Credencial de Elector</li>
-                    <li class="requisitosmascota">Copia de comprobante de domicilio</li>
-                </div>
-                </div>
-                <br>
-                    <h3>Sin resultados...</h3>
-
-                <div class="row">
-
-                
-                </div>
-
+                <h4>Todavía no se han encontrado videos...</h4>
                 <br>
             </div>
 
@@ -868,22 +177,6 @@
                 <h2>Familia BOCO</h2>
                 <br>
 
-                <h4>Echa un vistazo a nuestras cuentas oficiales</h4>
-                <br>
-
-                <div class="contact-bar">
-                <a href="mailto:bocomx.oficial@gmail.com" target="_blank" class="google"><img src="assets/img/contacto/gmail.svg"></a>
-
-                <a href="https://www.facebook.com/profile.php?id=100090362104756" target="_blank" class="facebook"><img src="assets/img/contacto/facebook.svg"></a>
-
-                <a href="https://wa.me/+522941399983" target="_blank" class="whatsapp"><img src="assets/img/contacto/whatsapp.svg"></a>
-
-                <a href="https://www.instagram.com/_boco_mx/" target="_blank" class="instagram"><img src="assets/img/contacto/instagram.svg"></a>
-
-                <a href="https://www.tiktok.com/@bocomx" target="_blank" class="tiktok"><img src="assets/img/contacto/tiktok.svg"></a>
-
-                </div>
-                <br>
 
                 <!--=============== EQUIPO BOCO ===============-->
 
@@ -896,7 +189,7 @@
                 <h3>Fabián</h3>
                 <p class="titleboco">Fundador</p>
                 <a href="https://www.instagram.com/fabiansoar/" target="_blank"><img src="assets/img/equipoboco/iconos/instagram.svg"></a>
-                <a href="https://fabiansoar27.github.io/portafolio/" target="_blank"><img src="assets/img/equipoboco/iconos/portafolio.svg"></a>
+                <a href="https://www.tiktok.com/@fabiansoar" target="_blank"><img src="assets/img/equipoboco/iconos/tiktok.svg"></a>
                 </div>
                 </div>
 
@@ -904,7 +197,7 @@
                 <div class="perfilboco"><img src="assets/img/equipoboco/yoel.png" alt="Yoel" style="width:100%">
                 <h3>Yoel</h3>
                 <p class="titleboco">Fundador</p>
-                <a href="https://www.facebook.com/YoelFRocha" target="_blank"><img src="assets/img/equipoboco/iconos/facebook.svg"></a>
+                <a href="https://www.facebook.com/YoelRocha13" target="_blank"><img src="assets/img/equipoboco/iconos/facebook.svg"></a>
                 <a href="https://www.instagram.com/yoelfrocha/" target="_blank"><img src="assets/img/equipoboco/iconos/instagram.svg"></a>
                 <a href="https://www.tiktok.com/@yoelfrocha?_t=8a2zvl6vx2c&_r=1" target="_blank"><img src="assets/img/equipoboco/iconos/tiktok.svg"></a>
                 </div>
@@ -913,7 +206,7 @@
                 <div class="column-boco">
                 <div class="perfilboco"><img src="assets/img/equipoboco/carolina.png" alt="Carolina" style="width:100%">
                 <h3>Carolina</h3>
-                <p class="titleboco">Cofundadora</p>
+                <p class="titleboco">Fundadora</p>
                 <a href="https://www.instagram.com/carol_a_hernandez/" target="_blank"><img src="assets/img/equipoboco/iconos/instagram.svg"></a>
                 </div>
                 </div>
@@ -921,7 +214,7 @@
                 <div class="column-boco">
                 <div class="perfilboco"><img src="assets/img/equipoboco/jedet.png" alt="Jedet" style="width:100%">
                 <h3>Jedet</h3>
-                <p class="titleboco">Cofundadora</p>
+                <p class="titleboco">Fundadora</p>
                 <a href="https://www.facebook.com/jedetmua/?mibextid=ZbWKwL" target="_blank"><img src="assets/img/equipoboco/iconos/facebook.svg"></a>
                 <a href="https://www.instagram.com/jedet_mua/" target="_blank"><img src="assets/img/equipoboco/iconos/instagram.svg"></a>
                 <a href="https://www.tiktok.com/@jedet_mua?_t=8a2zxQPWP4P&_r=1" target="_blank"><img src="assets/img/equipoboco/iconos/tiktok.svg"></a>
@@ -929,17 +222,98 @@
                 </div>
 
                 <div class="column-boco">
-                <div class="perfilboco"><img src="assets/img/equipoboco/jose.png" alt="Antonio" style="width:100%">
-                <h3>Jose Antonio</h3>
-                <p class="titleboco">Fotógrafo</p>
-                <a href="https://www.instagram.com/acostap.2000/" target="_blank"><img src="assets/img/equipoboco/iconos/instagram.svg"></a>
-                <a href="https://www.twitch.tv/acoxstin" target="_blank"><img src="assets/img/equipoboco/iconos/twitch.svg"></a>
+                <div class="perfilboco"><img src="assets/img/equipoboco/katia.png" alt="Katia" style="width:100%">
+                <h3>Katia</h3>
+                <a href="https://www.instagram.com/katiaacgs/" target="_blank"><img src="assets/img/equipoboco/iconos/instagram.svg"></a>
+                </div>
+                </div>
+
+                <div class="column-boco">
+                <div class="perfilboco"><img src="assets/img/equipoboco/elias.png" alt="Elías" style="width:100%">
+                <h3>Elías</h3>
+                <a href="https://www.instagram.com/elias_jab/" target="_blank"><img src="assets/img/equipoboco/iconos/instagram.svg"></a>
+                </div>
+                </div>
+
+                <div class="column-boco">
+                <div class="perfilboco"><img src="assets/img/equipoboco/ismael.png" alt="Ismael" style="width:100%">
+                <h3>Ismael</h3>
+                <a href="https://www.instagram.com/isma_jcd/" target="_blank"><img src="assets/img/equipoboco/iconos/instagram.svg"></a>
+                </div>
+                </div>
+
+                <div class="column-boco">
+                <div class="perfilboco"><img src="assets/img/equipoboco/vianey.png" alt="Vianey" style="width:100%">
+                <h3>Vianey</h3>
+                <a href="https://www.instagram.com/nane_lil21/" target="_blank"><img src="assets/img/equipoboco/iconos/instagram.svg"></a>
+                </div>
+                </div>
+
+                <div class="column-boco">
+                <div class="perfilboco"><img src="assets/img/equipoboco/maireth.png" alt="Maireth" style="width:100%">
+                <h3>Maireth</h3>
+                <a href="https://www.instagram.com/maimenher/" target="_blank"><img src="assets/img/equipoboco/iconos/instagram.svg"></a>
+                </div>
+                </div>
+
+                <div class="column-boco">
+                <div class="perfilboco"><img src="assets/img/equipoboco/nicole.png" alt="Nicole" style="width:100%">
+                <h3>Nicole</h3>
+                <a href="https://www.instagram.com/nnnicolleee_/" target="_blank"><img src="assets/img/equipoboco/iconos/instagram.svg"></a>
+                </div>
+                </div>
+
+                <div class="column-boco">
+                <div class="perfilboco"><img src="assets/img/equipoboco/nat.png" alt="Natalia" style="width:100%">
+                <h3>Nat</h3>
+                <a href="https://www.instagram.com/naty_golpe/" target="_blank"><img src="assets/img/equipoboco/iconos/instagram.svg"></a>
+                <a href="https://www.tiktok.com/@n_liaag5?lang=es" target="_blank"><img src="assets/img/equipoboco/iconos/tiktok.svg"></a>
+                </div>
+                </div>
+
+                <div class="column-boco">
+                <div class="perfilboco"><img src="assets/img/equipoboco/marie.png" alt="Marie" style="width:100%">
+                <h3>Marie</h3>
+                <a href="https://www.instagram.com/tonyskerefdez/" target="_blank"><img src="assets/img/equipoboco/iconos/instagram.svg"></a>
+                </div>
+                </div>
+
+                <div class="column-boco">
+                <div class="perfilboco"><img src="assets/img/equipoboco/israel.png" alt="Israel" style="width:100%">
+                <h3>Israel</h3>
+                <a href="https://www.instagram.com/olidiaz19/" target="_blank"><img src="assets/img/equipoboco/iconos/instagram.svg"></a>
+                </div>
+                </div>
+
+                <div class="column-boco">
+                <div class="perfilboco"><img src="assets/img/equipoboco/ruth.png" alt="Ruth" style="width:100%">
+                <h3>Ruth</h3>
+                <a href="https://www.instagram.com/__09_salazar/" target="_blank"><img src="assets/img/equipoboco/iconos/instagram.svg"></a>
                 </div>
                 </div>
 
                 </div>
 
                 <br>
+
+                <!--=============== RECONOCIMIENTO A BOCO ===============-->
+                <div class="donarcontainer">
+                <h3>Reconocimiento</h3>
+                <h4>¡Ayúdanos a hacer más felices a nuestros peluditos! Comparte BOCO con amigos, familiares y conocidos. Juntos, podemos marcar la diferencia en el cuidado de nuestras mascotas.</h4>
+                <br>
+                
+                <div class="containercompartirapp">
+
+                <div class="copyfield">
+                <span id="link">https://bocomx.github.io/web/</span>
+                <span id="copy-btn">Copiar</span>
+                </div>
+
+                </div>
+
+                <br>
+                </div>
+
                 <!--<h4>Asociaciones</h4>
                 <br>
 
@@ -1016,39 +390,27 @@
 
             </section>
 
-            <!--=============== VENTANA DONAR ===============-->
+            <!--=============== VENTANA MEDICOS VETERINARIOS ===============-->
 
-            <section data-content id="donar">
-                <h2>Donaciones</h2>
+            <section data-content id="veterinarios">
+                <h2>Medicos Veterinarios</h2>
                 <br>
 
-                <!--<div class="donarcontainer">
-                <h3>Monetaria</h3>
-                <h4>Próximamente</h4>
-                <br>
-                </div>
-
-                <div class="donarcontainer">
-                <h3>De recursos</h3>
-                <h4>Puedes donar alimento, cobijas u otros articulos para mascotas en los siguientes puntos de la zona:</h4>
-                <br>
-                </div>-->
-
-                <div class="donarcontainer">
-                <h3>Reconocimiento</h3>
-                <h4>Muestra BOCO a tus amigos o familiares. Al compartir y recomendar nuestra App nos ayudas a generar adopciones más seguras.</h4>
-                <br>
+                <!--<h4>San Andrés Tuxtla</h4>-->
                 
-                <div class="containercompartirapp">
+                <div class="row">
 
-                <div class="copyfield">
-                <span id="link">https://bocomx.github.io/web/</span>
-                <span id="copy-btn">Copiar</span>
+                <div class="column-vet">
+                <div class="perfilvet"><img src="assets/img/veterinarios/carrion.png" alt="Miguel Ángel Carrión Ramírez" style="width:100%">
+                <p class="titlevet">Médico Veterinario Zootecnista</p>
+                <h3>Miguel Ángel Carrión Ramírez</h3>
+                <p class="titlevet">Av. Aeropuerto 1366, Ranchoapan, 95797 (A un costado de Bomberos)</p>
+                <a href="https://www.facebook.com/profile.php?id=100009991277805" target="_blank"><img src="assets/img/veterinarios/iconos/facebook.svg"></a>
+                <a href="https://maps.app.goo.gl/gQbnuH52jxCVhKv58" target="_blank"><img src="assets/img/veterinarios/iconos/ubicacion.svg"></a>
+                <a href="tel:2491390728" target="_blank"><img src="assets/img/veterinarios/iconos/telefono.svg"></a>
+                </div>
                 </div>
 
-                </div>
-
-                <br>
                 </div>
 
             </section>
