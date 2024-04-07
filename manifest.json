@@ -15,24 +15,24 @@
   "screenshots": [],
   "icons": [
     {
-      "src": "icons/icon-512x512.png",
+      "src": "icons/pantalladecarga.png",
       "type": "image/png",
-      "sizes": "512x512"
+      "sizes": "1080x1920"
     },
     {
-      "src": "icons/icon-152x152.png",
+      "src": "icons/pantalladecarga.png",
       "type": "image/png",
-      "sizes": "152x152"
+      "sizes": "1080x1920"
     },
     {
-      "src": "icons/icon-180x180.png",
+      "src": "icons/pantalladecarga.png",
       "type": "image/png",
-      "sizes": "180x180"
+      "sizes": "1080x1920"
     },
     {
-      "src": "icons/icon-167x167.png",
+      "src": "icons/pantalladecarga.png",
       "type": "image/png",
-      "sizes": "167x167"
+      "sizes": "1080x1920"
     },
     {
       "src": "icons/pantalladecarga.png",
