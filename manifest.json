@@ -15,29 +15,16 @@
   "screenshots": [],
   "icons": [
     {
-      "src": "icons/pantalladecarga.png",
+      "src": "icons/icon-512x512.png",
       "type": "image/png",
-      "sizes": "1080x1920"
+      "sizes": "512x512"
+      "purpose": "maskable"
     },
     {
-      "src": "icons/pantalladecarga.png",
+      "src": "icons/icon-152x152.png",
       "type": "image/png",
-      "sizes": "1080x1920"
-    },
-    {
-      "src": "icons/pantalladecarga.png",
-      "type": "image/png",
-      "sizes": "1080x1920"
-    },
-    {
-      "src": "icons/pantalladecarga.png",
-      "type": "image/png",
-      "sizes": "1080x1920"
-    },
-    {
-      "src": "icons/pantalladecarga.png",
-      "type": "image/png",
-      "sizes": "1080x1920"
+      "sizes": "152x152"
+      "purpose": "maskable"
     }
   ],
   "shortcuts": [],
