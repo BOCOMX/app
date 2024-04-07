@@ -18,13 +18,26 @@
       "src": "icons/maskable-icon.png",
       "type": "image/png",
       "sizes": "512x512"
-      "purpose": "maskable"
     },
     {
       "src": "icons/maskable-icon.png",
       "type": "image/png",
-      "sizes": "512x512"
-      "purpose": "any"
+      "sizes": "152x152"
+    },
+    {
+      "src": "icons/maskable-icon.png",
+      "type": "image/png",
+      "sizes": "180x180"
+    },
+    {
+      "src": "icons/maskable-icon.png",
+      "type": "image/png",
+      "sizes": "167x167"
+    },
+    {
+      "src": "icons/maskable-icon.png",
+      "type": "image/png",
+      "sizes": "144x144"
     }
   ],
   "shortcuts": [],
