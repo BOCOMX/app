@@ -15,15 +15,9 @@
   "screenshots": [],
   "icons": [
     {
-      "src": "icons/icon-512x512.png",
+      "src": "icons/maskable-icon.png",
       "type": "image/png",
       "sizes": "512x512"
-      "purpose": "maskable"
-    },
-    {
-      "src": "icons/icon-152x152.png",
-      "type": "image/png",
-      "sizes": "152x152"
       "purpose": "maskable"
     }
   ],
