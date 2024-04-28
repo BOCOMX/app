@@ -20,6 +20,47 @@
   --tiny-font-size: .625rem;
 }
 
+/*=============== PRELOADER ===============*/
+
+.contenedor_loader{
+  background-color: var(--body-color);
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  z-index: 9996;
+  transition: all 2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* HTML: <div class="loader"></div> */
+.loader {
+  width: 20px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: #000;
+  box-shadow: 0 0 0 0 #0004;
+  animation: l2 1.5s infinite linear;
+  position: relative;
+}
+.loader:before,
+.loader:after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  box-shadow: 0 0 0 0 #0004;
+  animation: inherit;
+  animation-delay: -0.5s;
+}
+.loader:after {
+  animation-delay: -1s;
+}
+@keyframes l2 {
+    100% {box-shadow: 0 0 0 40px #0000}
+}
+
 @media screen and (min-width: 968px) {
   :root {
     --tiny-font-size: .688rem;
@@ -223,28 +264,6 @@ a {
 .header a.btnicons{
   float: right;
   cursor: pointer;
-}
-
-/* LOADING SIN CONEXIÓN */
-
-.containerloader {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.loader {
-  border: 16px solid #f3f3f3; /* Light grey */
-  border-top: 16px solid var(--terciary-color); /* Blue */
-  border-radius: 50%;
-  width: 90px;
-  height: 90px;
-  animation: spin 2s linear infinite;
-}
-
-@keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
 }
 
 /*=============== PANTALLA INICIO ===============*/
