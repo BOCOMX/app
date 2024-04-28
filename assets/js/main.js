@@ -1,3 +1,13 @@
+/*==================== PRELOADER Y LLEVAR PÁGINA ARRIBA AL RECARGAR ====================*/
+window.addEventListener('load', () => {
+  const contenedor_loader = document.querySelector('.contenedor_loader');
+  contenedor_loader.style.opacity = 0;
+  contenedor_loader.style.visibility = 'hidden';
+  setTimeout(() => {
+    window.scrollTo(0, 0);
+  }, 250);
+});
+
 /*=============== ACTIVE LINK ===============*/
 const navlink = document.querySelectorAll('.nav__link')
 
