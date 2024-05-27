@@ -19,19 +19,25 @@
 
         <link rel="icon" href="assets/favicon.svg" />
         
-        <title>BOCO V3.6.4.24428</title>
+        <!-- VERSION:
+                X= NÚMERO DE VERSIÓN MAYOR
+                Y= NUMERO DE NUEVAS FUNCIONES EN LA VERSIÓN
+                Z= VECES QUE SE ARRGLARON LOS ERRORES DE SOFTWARE / VISUALES
+                FECHA= DÍA MES AÑO
+        -->
+        <title>BOCO V4.6.26.270524</title>
 
         <script>
-  if ('serviceWorker' in navigator) {
-  window.addEventListener('load', function() {
-    navigator.serviceWorker.register('/sw.js').then(function(registration) {
-      console.log('Service Worker registrado con éxito con alcance:', registration.scope);
-    }, function(err) {
-      console.log('Error al registrar el Service Worker:', err);
-    });
-  });
-}
-</script>
+          if ('serviceWorker' in navigator) {
+          window.addEventListener('load', function() {
+            navigator.serviceWorker.register('https://bocomx.github.io/app/sw.js').then(function(registration) {
+              console.log('Service Worker registrado con éxito con alcance:', registration.scope);
+            }, function(err) {
+              console.log('Error al registrar el Service Worker:', err);
+            });
+          });
+        }
+        </script>
 
     </head>
 
@@ -58,10 +64,10 @@
                     </span>
                 </a>
 
-                <a data-target="#team" class="nav__link">
-                    <img src="assets/img/menu/equipo.svg">
+                <a data-target="#lugares" class="nav__link">
+                    <img src="assets/img/menu/lugares.svg">
                     <span class="nav__name">
-                        BOCO
+                        Lugares
                     </span>
                 </a>
 
@@ -79,7 +85,7 @@
                     </span>
                 </a>
 
-                <svg class="indicator" width="94" height="56" xmlns="http://www.w3.org/2000/svg">
+                <svg class="indicator indicator-nav" width="94" height="56" xmlns="http://www.w3.org/2000/svg">
                     <ellipse cx="47" cy="28" rx="24" ry="28"/>
                     <path d="M24 20C24 20 28 55.9999 48 56L0 55.9997C18 55.9998 24 20 24 20Z"/>
                     <path d="M70 20C70 20 66 55.9999 46 56L94 55.9997C76 55.9998 70 20 70 20Z"/>
@@ -90,9 +96,9 @@
         <!--=============== ENCABEZADO ===============-->
         <div class="header">
                 <a class="logo">BOCO</a>
-            <!--<div class="header-right">
-                <a class="btnicons"><img src="assets/img/menu/oscuro.svg"></a>
-            </div>-->
+            <div class="header-right">
+                <a data-target="#configuraciones" class="btnicons"><img src="assets/img/menu/config.svg"></a>
+            </div>
         </div>
 
         <!--=============== MAIN ===============-->
@@ -113,44 +119,145 @@
                 <br>
 
                 <!--============== 10 CAMPAÑAS DE ESTERILIZACIÓN POR BOCO ================-->
-                <div class="cardpostFB">
-                <div class="iframe-container">
-                <iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpermalink.php%3Fstory_fbid%3Dpfbid025x7vTX7yJPnwhgVwH5vF1w9fJ4kPhDWyHJFn6dtwXxETWEABR2qTYZPvweEL64Cxl%26id%3D61552034053932&show_text=true&width=500" width="100%" height="750" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+                
+                <div class="card-post-inicio">
+                <div class="top">
+                <div class="userDeatils">
+                <div class="profileImg">
+                    <img src="assets/img/inicio/user/BOCO.jpg" alt="BOCO" class="cover">
                 </div>
+                <h3>BOCO<br><span>Vía Facebook</span></h3>
+                </div>
+                <!--<div class="dot">
+                <img src="assets/img/inicio/elementos/dot.png" alt="dot">
+                </div>-->
+                </div>
+                <div class="imgBg">
+                <a href="https://www.facebook.com/permalink.php?story_fbid=pfbid02NDMDcrzNFaL11EYjf6SEvwR1uqiy8Ctz3NcpAjUiuu2TCxH2SRhmEoh7DE1HSsdl&id=61552034053932" target="_blank"><img src="assets/img/inicio/foto/10CAMPAÑASDEESTERILIZACIÓNPORBOCO.png" alt="9 Y 10 CAMPAÑAS DE ESTERILIZACIÓN POR BOCO" class="cover"></a>
+                </div>
+                <div class="btns2">
+                <div class="left">
+                <a href="https://www.facebook.com/permalink.php?story_fbid=pfbid02NDMDcrzNFaL11EYjf6SEvwR1uqiy8Ctz3NcpAjUiuu2TCxH2SRhmEoh7DE1HSsdl&id=61552034053932" target="_blank"><img src="assets/img/inicio/elementos/heart2.png" alt="heart" class="heart" onclick="likeButton()"></a>
+
+                <a href="https://www.facebook.com/permalink.php?story_fbid=pfbid02NDMDcrzNFaL11EYjf6SEvwR1uqiy8Ctz3NcpAjUiuu2TCxH2SRhmEoh7DE1HSsdl&id=61552034053932" target="_blank"><img src="assets/img/inicio/elementos/comment.png" alt="comment"></a>
+
+                <a href="https://www.facebook.com/permalink.php?story_fbid=pfbid02NDMDcrzNFaL11EYjf6SEvwR1uqiy8Ctz3NcpAjUiuu2TCxH2SRhmEoh7DE1HSsdl&id=61552034053932" target="_blank"><img src="assets/img/inicio/elementos/share2.png" alt="share"></a>
+                </div>
+                <div class="right">
+                <a href="https://www.facebook.com/permalink.php?story_fbid=pfbid02NDMDcrzNFaL11EYjf6SEvwR1uqiy8Ctz3NcpAjUiuu2TCxH2SRhmEoh7DE1HSsdl&id=61552034053932" target="_blank"><img src="assets/img/inicio/elementos/bookmark.png" alt="bookmark"></a>
+                </div>
+                </div>
+                <h4 class="likes">12 Reacciones</h4>
+                <h4 class="message">
+                <b>BOCO </b> ¡Logro cumplido! BOCO ha finalizado con éxito su novena y décima campaña de esterilización en San Andrés Tuxtla.
+                <span>#esterilizaciónresponsable </span>
+                <span>#bienestaranimal</span>
+                </h4>
+
+                <!--<h4 class="comments">View all 546 comments</h4>
+                <div class="addComments">
+                <div class="userImg">
+                <img src="assets/img/inicio/user/User.jpg" alt="user" class="cover">
+                </div>
+                <input type="text" class="text" placeholder="Add a comment...">
+                </div>-->
+                <h5 class="postTime"><a class="iconpost"><i class="ri-calendar-line"></i></a> Jueves, 16 de Noviembre 2023</h5>
                 </div>
                 <br>
 
                 <!--============== CAMPAÑA DE ADOPCIÓN EXPRESS ================-->
 
-                <div class="cardpost">
-                <img src="assets/img/inicio/campañaadopcioncaro.jpg" onclick="openFullImg(this.src)" alt="CAMPAÑA DE ADOPCIÓN EXPRESS" style="width:100%">
-                <hr>
-                <br>
-                <h3>Campaña de Adopción Express</h3>
-                <br>
-                <p class="textpost">Dirigida por nuestra fundadora Carolina.</p>
-                <br>
-                <p class="time"><a class="iconpost"><i class="ri-calendar-line"></i></a> Lunes, 17 de Junio 2023</p>
-                <p class="time"><a class="iconpost"><i class="ri-time-line"></i></a> 05:10 p.m.</p>
+                <div class="card-post-inicio">
+                <div class="top">
+                <div class="userDeatils">
+                <div class="profileImg">
+                    <img src="assets/img/inicio/user/BOCO.jpg" alt="BOCO" class="cover">
+                </div>
+                <h3>BOCO<br><span>Vía Instagram Reels</span></h3>
+                </div>
+                <!--<div class="dot">
+                <img src="assets/img/inicio/elementos/dot.png" alt="dot">
+                </div>-->
+                </div>
+                <div class="imgBg">
+                <img src="assets/img/inicio/foto/campañaadopcioncaro.jpg" onclick="openFullImg(this.src)" alt="Campaña de Adopción Carolina" class="cover">
+                </div>
+                <div class="btns2">
+                <div class="left">
+                <a href="https://www.instagram.com/reel/CtnGDpepjJS/" target="_blank"><img src="assets/img/inicio/elementos/heart.png" alt="heart" class="heart" onclick="likeButton()"></a>
 
-                <a href="https://www.instagram.com/reel/CtnGDpepjJS/" target="_blank"><button>Ver video</button></a>
+                <a href="https://www.instagram.com/reel/CtnGDpepjJS/" target="_blank"><img src="assets/img/inicio/elementos/comment.png" alt="comment"></a>
+
+                <a href="https://www.instagram.com/reel/CtnGDpepjJS/" target="_blank"><img src="assets/img/inicio/elementos/share.png" alt="share"></a>
+
+                </div>
+                <div class="right">
+                <a href="https://www.instagram.com/reel/CtnGDpepjJS/" target="_blank"><img src="assets/img/inicio/elementos/bookmark.png" alt="bookmark"></a>
+                </div>
+                </div>
+                <h4 class="likes">14 Me gusta</h4>
+                <h4 class="message">
+                <b>_boco_mx </b> Tercera campaña de Adopción Express dirigida por nuestra fundadora Carolina en San Andrés Tuxtla.
+                <span>#adoptanocompres</span>
+                <span>#adopcionresponsable</span>
+                </h4>
+
+                <!--<h4 class="comments">View all 546 comments</h4>
+                <div class="addComments">
+                <div class="userImg">
+                <img src="assets/img/inicio/user/User.jpg" alt="user" class="cover">
+                </div>
+                <input type="text" class="text" placeholder="Add a comment...">
+                </div>-->
+                <h5 class="postTime"><a class="iconpost"><i class="ri-calendar-line"></i></a> Lunes, 17 de Junio 2023</h5>
                 </div>
                 <br>
 
                 <!--============== RESCATE DE NEGRITA Y SUS CACHORROS ================-->
 
-                <div class="cardpost">
-                <img src="assets/img/inicio/negraycachorros.png" onclick="openFullImg(this.src)" alt="Rescate de Negrita y sus cachorros" style="width:100%">
-                <hr>
-                <br>
-                <h3>Rescate de Negrita y sus cachorros</h3>
-                <br>
-                <p class="textpost">La Negrita y sus cachorros ya tienen familia. Mira esta hermosa historia en el botón de abajo.</p>
-                <br>
-                <p class="time"><a class="iconpost"><i class="ri-calendar-line"></i></a> Lunes, 06 de Marzo 2023</p>
-                <p class="time"><a class="iconpost"><i class="ri-time-line"></i></a> 01:43 a.m.</p>
+                <div class="card-post-inicio">
+                <div class="top">
+                <div class="userDeatils">
+                <div class="profileImg">
+                    <img src="assets/img/inicio/user/yoel.jpg" alt="Yoel Rocha" class="cover">
+                </div>
+                <h3>Yoel Rocha<br><span>Vía Instagram Reels</span></h3>
+                </div>
+                <!--<div class="dot">
+                <img src="assets/img/inicio/elementos/dot.png" alt="dot">
+                </div>-->
+                </div>
+                <div class="imgBg">
+                <img src="assets/img/inicio/foto/negraycachorros.png" onclick="openFullImg(this.src)" alt="Negrita y sus cachorros" class="cover">
+                </div>
+                <div class="btns2">
+                <div class="left">
+                <a href="https://www.instagram.com/reel/Co0zczDD8oZ/" target="_blank"><img src="assets/img/inicio/elementos/heart.png" alt="heart" class="heart" onclick="likeButton()"></a>
 
-                <a href="https://www.instagram.com/reel/Co0zczDD8oZ/" target="_blank"><button>Ver video</button></a>
+                <a href="https://www.instagram.com/reel/Co0zczDD8oZ/" target="_blank"><img src="assets/img/inicio/elementos/comment.png" alt="comment"></a>
+
+                <a href="https://www.instagram.com/reel/Co0zczDD8oZ/" target="_blank"><img src="assets/img/inicio/elementos/share.png" alt="share"></a>
+
+                </div>
+                <div class="right">
+                <a href="https://www.instagram.com/reel/Co0zczDD8oZ/" target="_blank"><img src="assets/img/inicio/elementos/bookmark.png" alt="bookmark"></a>
+                </div>
+                </div>
+                <h4 class="likes">164 Me gusta</h4>
+                <h4 class="message">
+                <b>yoelfrocha </b> ¡Adopta, no compres! La negrita y sus cachorros ya tienen familia.
+                <span>#JuntosCrecemos</span>
+                <span>#adoptanocompres</span>
+                </h4>
+
+                <!--<h4 class="comments">View all 546 comments</h4>
+                <div class="addComments">
+                <div class="userImg">
+                <img src="assets/img/inicio/user/User.jpg" alt="user" class="cover">
+                </div>
+                <input type="text" class="text" placeholder="Add a comment...">
+                </div>-->
+                <h5 class="postTime"><a class="iconpost"><i class="ri-calendar-line"></i></a> Sábado, 18 de Febrero 2023</h5>
                 </div>
                 <br>
 
@@ -169,10 +276,50 @@
 
                 <!--============== ¿Qué es BOCO? - Misión y Visión ================-->
                 
-                <div class="cardpostFB">
-                <div class="iframe-container2">
-                <iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpermalink.php%3Fstory_fbid%3Dpfbid0NnTcCbMJMi8MFdMMG9gmcGcPEeajsvtW2fajacqrSKyMJTpCgL6vCaW7oTHZ7HTLl%26id%3D61552034053932&show_text=true&width=500" width="100%" height="780" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+                <div class="card-post-inicio">
+                <div class="top">
+                <div class="userDeatils">
+                <div class="profileImg">
+                    <img src="assets/img/inicio/user/BOCO.jpg" alt="BOCO" class="cover">
                 </div>
+                <h3>BOCO<br><span>Vía Facebook</span></h3>
+                </div>
+                <!--<div class="dot">
+                <img src="assets/img/inicio/elementos/dot.png" alt="dot">
+                </div>-->
+                </div>
+                <div class="imgBg">
+                <a href="https://www.facebook.com/permalink.php?story_fbid=pfbid02Sbdw4XeW8Aiga9LNsoqJCDi7vnYctAYs6ppKvinvXDoZWSRJRwdxVg12BaVituyJl&id=61552034053932" target="_blank"><img src="assets/img/inicio/foto/BOCOMVV.png" alt="¿Qué es BOCO? Misión, Visión y Valores" class="cover"></a>
+                </div>
+                <div class="btns2">
+                <div class="left">
+                <a href="https://www.facebook.com/permalink.php?story_fbid=pfbid02Sbdw4XeW8Aiga9LNsoqJCDi7vnYctAYs6ppKvinvXDoZWSRJRwdxVg12BaVituyJl&id=61552034053932" target="_blank"><img src="assets/img/inicio/elementos/heart2.png" alt="heart" class="heart" onclick="likeButton()"></a>
+
+                <a href="https://www.facebook.com/permalink.php?story_fbid=pfbid02Sbdw4XeW8Aiga9LNsoqJCDi7vnYctAYs6ppKvinvXDoZWSRJRwdxVg12BaVituyJl&id=61552034053932" target="_blank"><img src="assets/img/inicio/elementos/comment.png" alt="comment"></a>
+
+                <a href="https://www.facebook.com/permalink.php?story_fbid=pfbid02Sbdw4XeW8Aiga9LNsoqJCDi7vnYctAYs6ppKvinvXDoZWSRJRwdxVg12BaVituyJl&id=61552034053932" target="_blank"><img src="assets/img/inicio/elementos/share2.png" alt="share"></a>
+                </div>
+                <div class="right">
+                <a href="https://www.facebook.com/permalink.php?story_fbid=pfbid02Sbdw4XeW8Aiga9LNsoqJCDi7vnYctAYs6ppKvinvXDoZWSRJRwdxVg12BaVituyJl&id=61552034053932" target="_blank"><img src="assets/img/inicio/elementos/bookmark.png" alt="bookmark"></a>
+                </div>
+                </div>
+                <h4 class="likes">8 Reacciones</h4>
+                <h4 class="message">
+                <b>BOCO </b> Descubre quiénes somos y lo que hacemos.
+                <span>#rescateanimal </span>
+                <span>#adoptanocompres</span>
+                <span>#adopcionresponsable</span>
+                <span>#bienestaranimal</span>
+                </h4>
+
+                <!--<h4 class="comments">View all 546 comments</h4>
+                <div class="addComments">
+                <div class="userImg">
+                <img src="assets/img/inicio/user/User.jpg" alt="user" class="cover">
+                </div>
+                <input type="text" class="text" placeholder="Add a comment...">
+                </div>-->
+                <!--<h5 class="postTime"><a class="iconpost"><i class="ri-calendar-line"></i></a> Jueves, 16 de Noviembre 2023</h5>-->
                 </div>
                 <br>
 
@@ -183,7 +330,7 @@
             <section data-content id="consejos">
                 <h2>BOCO Visuals</h2>
                 <br>
-                <h4>Videos sobre amor, cuidado animal y más</h4>
+                <div class="subtitulo"><h4>Videos sobre amor, cuidado animal y más</h4></div>
             <div> 
                 <!--============= Yoel y Baki ===========-->
                 <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@yoelfrocha/video/7331467678579723526" data-video-id="7331467678579723526" style="max-width: 605px;min-width: 325px;" > <section> <a target="_blank" title="@yoelfrocha" href="https://www.tiktok.com/@yoelfrocha?refer=embed">@yoelfrocha</a> Mi viejita hermosa ❤️, es mi última perrita y tiene 15 años de edad 🤧 <a title="juntoscrecemos" target="_blank" href="https://www.tiktok.com/tag/juntoscrecemos?refer=embed">#JuntosCrecemos</a> <a title="pasalavoz" target="_blank" href="https://www.tiktok.com/tag/pasalavoz?refer=embed">#PasaLaVoz</a> <a title="noticias" target="_blank" href="https://www.tiktok.com/tag/noticias?refer=embed">#noticias</a> <a title="news" target="_blank" href="https://www.tiktok.com/tag/news?refer=embed">#News</a> <a title="educacion" target="_blank" href="https://www.tiktok.com/tag/educacion?refer=embed">#educacion</a> <a title="love" target="_blank" href="https://www.tiktok.com/tag/love?refer=embed">#love</a> <a title="dog" target="_blank" href="https://www.tiktok.com/tag/dog?refer=embed">#dog</a> <a title="perro" target="_blank" href="https://www.tiktok.com/tag/perro?refer=embed">#Perro</a> <a title="amor" target="_blank" href="https://www.tiktok.com/tag/amor?refer=embed">#amor</a> <a target="_blank" title="♬ My Love Mine All Mine - Mitski" href="https://www.tiktok.com/music/My-Love-Mine-All-Mine-7255011118329989121?refer=embed">♬ My Love Mine All Mine - Mitski</a> </section> </blockquote> <script async src="https://www.tiktok.com/embed.js"></script>
@@ -197,124 +344,30 @@
             </div>
             </section>
 
-            <!--=============== PANTALLA BOCO ===============-->
+            <!--=============== PANTALLA LUGARES ===============-->
 
-            <section data-content id="team">
-                <h2>Familia BOCO</h2>
+            <section data-content id="lugares">
+                <h2>Lugares que admiten mascotas</h2>
                 <br>
 
 
-                <!--=============== EQUIPO BOCO ===============-->
+                <!--=============== VENTANA LUGARES PET FRIENDLY ===============-->
 
-                <h4>Equipo BOCO</h4>
+                <h4>En Los Tuxtlas</h4>
                 <br>
                 <div class="row">
 
-                <div class="column-boco">
-                <div class="perfilboco"><img src="assets/img/equipoboco/fabian.png" alt="Fabián" style="width:100%">
-                <h3>Fabián</h3>
-                <p class="titleboco">Fundador</p>
-                <a href="https://www.instagram.com/fabiansoar/" target="_blank"><img src="assets/img/equipoboco/iconos/instagram.svg"></a>
-                <a href="https://www.tiktok.com/@fabiansoar" target="_blank"><img src="assets/img/equipoboco/iconos/tiktok.svg"></a>
+                <div class="column-lugares">
+                <div class="perfillugares"><img src="assets/img/lugares/TEXX.jpg" alt="TEXX" style="width:100%">
+                <!--<h3>TEXX Super Tiendas</h3>-->
+                <a href="https://www.google.com/maps/search/texx/@18.4449776,-95.2232206,14z/data=!3m1!4b1?entry=ttu" target="_blank"><button> Ver Ubicaciones</button></a>
                 </div>
                 </div>
 
-                <div class="column-boco">
-                <div class="perfilboco"><img src="assets/img/equipoboco/yoel.png" alt="Yoel" style="width:100%">
-                <h3>Yoel</h3>
-                <p class="titleboco">Fundador</p>
-                <a href="https://www.facebook.com/YoelRocha13" target="_blank"><img src="assets/img/equipoboco/iconos/facebook.svg"></a>
-                <a href="https://www.instagram.com/yoelfrocha/" target="_blank"><img src="assets/img/equipoboco/iconos/instagram.svg"></a>
-                <a href="https://www.tiktok.com/@yoelfrocha?_t=8a2zvl6vx2c&_r=1" target="_blank"><img src="assets/img/equipoboco/iconos/tiktok.svg"></a>
-                </div>
-                </div>
-
-                <div class="column-boco">
-                <div class="perfilboco"><img src="assets/img/equipoboco/carolina.png" alt="Carolina" style="width:100%">
-                <h3>Carolina</h3>
-                <p class="titleboco">Fundadora</p>
-                <a href="https://www.instagram.com/carol_a_hernandez/" target="_blank"><img src="assets/img/equipoboco/iconos/instagram.svg"></a>
-                </div>
-                </div>
-
-                <div class="column-boco">
-                <div class="perfilboco"><img src="assets/img/equipoboco/jedet.png" alt="Jedet" style="width:100%">
-                <h3>Jedet</h3>
-                <p class="titleboco">Fundadora</p>
-                <a href="https://www.facebook.com/jedetmua/?mibextid=ZbWKwL" target="_blank"><img src="assets/img/equipoboco/iconos/facebook.svg"></a>
-                <a href="https://www.instagram.com/jedet_mua/" target="_blank"><img src="assets/img/equipoboco/iconos/instagram.svg"></a>
-                <a href="https://www.tiktok.com/@jedet_mua?_t=8a2zxQPWP4P&_r=1" target="_blank"><img src="assets/img/equipoboco/iconos/tiktok.svg"></a>
-                </div>
-                </div>
-
-                <div class="column-boco">
-                <div class="perfilboco"><img src="assets/img/equipoboco/katia.png" alt="Katia" style="width:100%">
-                <h3>Katia</h3>
-                <a href="https://www.instagram.com/katiaacgs/" target="_blank"><img src="assets/img/equipoboco/iconos/instagram.svg"></a>
-                </div>
-                </div>
-
-                <div class="column-boco">
-                <div class="perfilboco"><img src="assets/img/equipoboco/elias.png" alt="Elías" style="width:100%">
-                <h3>Elías</h3>
-                <a href="https://www.instagram.com/elias_jab/" target="_blank"><img src="assets/img/equipoboco/iconos/instagram.svg"></a>
-                </div>
-                </div>
-
-                <div class="column-boco">
-                <div class="perfilboco"><img src="assets/img/equipoboco/ismael.png" alt="Ismael" style="width:100%">
-                <h3>Ismael</h3>
-                <a href="https://www.instagram.com/isma_jcd/" target="_blank"><img src="assets/img/equipoboco/iconos/instagram.svg"></a>
-                </div>
-                </div>
-
-                <div class="column-boco">
-                <div class="perfilboco"><img src="assets/img/equipoboco/vianey.png" alt="Vianey" style="width:100%">
-                <h3>Vianey</h3>
-                <a href="https://www.instagram.com/nane_lil21/" target="_blank"><img src="assets/img/equipoboco/iconos/instagram.svg"></a>
-                </div>
-                </div>
-
-                <div class="column-boco">
-                <div class="perfilboco"><img src="assets/img/equipoboco/maireth.png" alt="Maireth" style="width:100%">
-                <h3>Maireth</h3>
-                <a href="https://www.instagram.com/maimenher/" target="_blank"><img src="assets/img/equipoboco/iconos/instagram.svg"></a>
-                </div>
-                </div>
-
-                <div class="column-boco">
-                <div class="perfilboco"><img src="assets/img/equipoboco/nicole.png" alt="Nicole" style="width:100%">
-                <h3>Nicole</h3>
-                <a href="https://www.instagram.com/nnnicolleee_/" target="_blank"><img src="assets/img/equipoboco/iconos/instagram.svg"></a>
-                </div>
-                </div>
-
-                <div class="column-boco">
-                <div class="perfilboco"><img src="assets/img/equipoboco/nat.png" alt="Natalia" style="width:100%">
-                <h3>Nat</h3>
-                <a href="https://www.instagram.com/naty_golpe/" target="_blank"><img src="assets/img/equipoboco/iconos/instagram.svg"></a>
-                <a href="https://www.tiktok.com/@n_liaag5?lang=es" target="_blank"><img src="assets/img/equipoboco/iconos/tiktok.svg"></a>
-                </div>
-                </div>
-
-                <div class="column-boco">
-                <div class="perfilboco"><img src="assets/img/equipoboco/marie.png" alt="Marie" style="width:100%">
-                <h3>Marie</h3>
-                <a href="https://www.instagram.com/tonyskerefdez/" target="_blank"><img src="assets/img/equipoboco/iconos/instagram.svg"></a>
-                </div>
-                </div>
-
-                <div class="column-boco">
-                <div class="perfilboco"><img src="assets/img/equipoboco/israel.png" alt="Israel" style="width:100%">
-                <h3>Israel</h3>
-                <a href="https://www.instagram.com/olidiaz19/" target="_blank"><img src="assets/img/equipoboco/iconos/instagram.svg"></a>
-                </div>
-                </div>
-
-                <div class="column-boco">
-                <div class="perfilboco"><img src="assets/img/equipoboco/ruth.png" alt="Ruth" style="width:100%">
-                <h3>Ruth</h3>
-                <a href="https://www.instagram.com/__09_salazar/" target="_blank"><img src="assets/img/equipoboco/iconos/instagram.svg"></a>
+                <div class="column-lugares">
+                <div class="perfillugares"><img src="assets/img/lugares/LaBicicleta.jpg" alt="La Bicicleta Café" style="width:100%">
+                <!--<h3>La Bicicleta Café</h3>-->
+                <a href="https://www.google.com/maps/search/La+bicicleta/@18.4470927,-95.2149556,17z/data=!3m1!4b1?entry=ttu" target="_blank"><button> Ver Ubicaciones</button></a>
                 </div>
                 </div>
 
@@ -322,61 +375,6 @@
 
                 <br>
 
-                <!--=============== RECONOCIMIENTO A BOCO ===============-->
-                <div class="donarcontainer">
-                <h3>Reconocimiento</h3>
-                <h4>¡Ayúdanos a hacer más felices a nuestros peluditos! Comparte BOCO con amigos, familiares y conocidos. Juntos, podemos marcar la diferencia en el cuidado de nuestras mascotas.</h4>
-                <br>
-                
-                <div class="containercompartirapp">
-
-                <div class="copyfield">
-                <span id="link">https://bocomx.github.io/web/</span>
-                <span id="copy-btn">Copiar</span>
-                </div>
-
-                </div>
-
-                <br>
-                </div>
-
-                <!--<h4>Asociaciones</h4>
-                <br>
-
-                =============== ASOCIACIONES ===============
-                <div class="row">
-                    <div class="column-asoc">
-                        <div class="perfilasoc">
-                        <a href=""><img src="assets/img/equipoboco/asociaciones/asociacion1.svg"></a>
-                        </div>
-                    </div>
-
-                    <div class="column-asoc">
-                        <div class="perfilasoc">
-                        <a href=""><img src="assets/img/equipoboco/asociaciones/asociacion2.svg"></a>
-                        </div>
-                    </div>
-
-                    <div class="column-asoc">
-                        <div class="perfilasoc">
-                        <a href=""><img src="assets/img/equipoboco/asociaciones/asociacion3.svg"></a>
-                        </div>
-                    </div>
-
-                    <div class="column-asoc">
-                        <div class="perfilasoc">
-                        <a href=""><img src="assets/img/equipoboco/asociaciones/asociacion4.svg"></a>
-                        </div>
-                    </div>
-                </div>
-                <br>
-
-                <h4>Aliados</h4>
-                <br>
-                <h4>Colaboradores</h4>-->
-                <br>
-
-                
             </section>
 
             <!--=============== VENTANA ARTICULOS ===============-->
@@ -388,7 +386,7 @@
 
                 <div class="column-producto">
                 <div class="productoboco"><img src="assets/img/tienda/membresiaboco.png" alt="Paquete BOCO" style="width:100%">
-                <h3>Paquete BOCO</h3>
+                <h3 class="nombreproducto">Paquete BOCO</h3>
                 <!--<h4 class="precio">$600</h4>-->
                 <button id="modalproducto-btn-1">Detalles</button>
                 </div>
@@ -405,7 +403,7 @@
                 <p class="tituloperfilmascota">Contenido:</p>
                 <li class="infoperfilmascota">Playera de Apoyo BOCO</li>
                 <li class="infoperfilmascota">Plato para mascotas BOCO</li>
-                <li class="infoperfilmascota">Stickers BOCO</li>
+                <li class="infoperfilmascota">Pegaatinas BOCO</li>
                 <li class="infoperfilmascota">Invitaciones especiales</li>
                 <p class="nota"> NOTA: La playera tendrá tu nombre en la parte trasera, además podrás escoger la decoración del plato para tu mascota entre distintas opciones.</p>
                 <a><button class="botoncomprar">¡Próximamente!</button></a>
@@ -419,7 +417,7 @@
             <!--=============== VENTANA MEDICOS VETERINARIOS ===============-->
 
             <section data-content id="veterinarios">
-                <h2>Medicos Veterinarios</h2>
+                <h2>Médicos Veterinarios</h2>
                 <br>
 
                 <!--<h4>San Andrés Tuxtla</h4>-->
@@ -440,6 +438,32 @@
                 </div>
 
             </section>
+
+             <!--=============== PANTALLA CONFIGURACIONES ===============-->
+
+            <section data-content id="configuraciones">
+                <h2>Configuración</h2>
+                <br>
+
+            <div class="row">
+                <div class="column-config">
+                    <div class="configboco">
+                        <h3>Idioma</h3>
+                        <button class="configboco-btn-active" onclick="cambiarIdioma('es')">Español <i class="ri-radio-button-line"></i></button>
+                        <button class="configboco-btn2" onclick="cambiarIdioma('en')">Inglés</button>
+                    </div>
+
+                    <br>
+
+                    <div class="configboco">
+                        <h3>Modo Oscuro</h3>
+                        <button class="configboco-btn" onclick="activarModoOscuro()">Activar</button>
+                    </div>
+                </div>
+            </div>
+
+            </section>
+
         </main>
         <br>
         <div class="footer">
