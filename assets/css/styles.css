@@ -9,16 +9,74 @@
 :root {
   /*========== Colors ==========*/
   --first-color: #1C1C1C;
-  --second-color:#FFFFFF;
-  --terciary-color: #FF678D;
+  --second-color: #FFFFFF;
+  --terciary-color: #1C1C1C;
   --text-color: #6E6F77;
   --body-color: #F9FAFF;
   --container-color: #FFFFFF;
+  --color-x: #FFFFFF;
+  --color-x2: #FF678D;
+  --loader-color-1: #0004;
+  --loader-color-2: #0000;
+
+  --first-color-dark: #FFFFFF;
+  --second-color-dark: #1C1C1C;
+  --terciary-color-dark: #FF678D;
+  --text-color-dark: #A9A9A9;
+  --body-color-dark: #121212;
+  --container-color-dark: #1C1C1C;
+  --color-x-dark: #FFFFFF;
+  --color-x2-dark: #FF678D;
+  --loader-color-1-dark: #FFF9;
+  --loader-color-2-dark: #0004;
 
   /*========== Font and typography ==========*/
   --body-font: 'Poppins', sans-serif;
   --tiny-font-size: .625rem;
 }
+
+body.modo-oscuro {
+  --first-color: var(--first-color-dark);
+  --second-color: var(--second-color-dark);
+  --terciary-color: var(--terciary-color-dark);
+  --text-color: var(--text-color-dark);
+  --body-color: var(--body-color-dark);
+  --container-color: var(--container-color-dark);
+  --color-x: var(--color-x-dark);
+  --color-x2: var(--color-x2-dark);
+  --loader-color-1: var(--loader-color-1-dark);
+  --loader-color-2: var(--loader-color-2-dark);
+
+  background-color: var(--body-color-dark);
+  color: var(--text-color-dark);
+}
+
+nav__link img {
+  filter: invert(13%) sepia(10%) saturate(745%) hue-rotate(0deg) brightness(93%) contrast(94%); /* Black */
+  transition: .3s;
+}
+
+body.modo-oscuro .nav__link img {
+  filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(0deg) brightness(100%) contrast(100%); /* White */
+}
+
+.active-link img {
+  filter: invert(13%) sepia(10%) saturate(745%) hue-rotate(0deg) brightness(93%) contrast(94%); /* Black */
+}
+
+body.modo-oscuro .active-link img {
+  filter: grayscale(100%) brightness(60%) contrast(100%); /* Gray */
+}
+
+.indicator {
+  fill: var(--first-color);
+  transition: .3s;
+}
+
+body.modo-oscuro .indicator {
+  fill: var(--first-color-dark);
+}
+
 
 /*=============== PRELOADER ===============*/
 
@@ -27,7 +85,7 @@
   position: fixed;
   width: 100vw;
   height: 100vh;
-  z-index: 9996;
+  z-index: 9995;
   transition: all 2s;
   display: flex;
   align-items: center;
@@ -39,8 +97,8 @@
   width: 20px;
   aspect-ratio: 1;
   border-radius: 50%;
-  background: #000;
-  box-shadow: 0 0 0 0 #0004;
+  background: var(--first-color);
+  box-shadow: 0 0 0 0 var(--loader-color-1);
   animation: l2 1.5s infinite linear;
   position: relative;
 }
@@ -50,7 +108,7 @@
   position: absolute;
   inset: 0;
   border-radius: inherit;
-  box-shadow: 0 0 0 0 #0004;
+  box-shadow: 0 0 0 0 var(--loader-color-1);
   animation: inherit;
   animation-delay: -0.5s;
 }
@@ -58,7 +116,7 @@
   animation-delay: -1s;
 }
 @keyframes l2 {
-    100% {box-shadow: 0 0 0 40px #0000}
+    100% {box-shadow: 0 0 0 40px var(--loader-color-2);}
 }
 
 @media screen and (min-width: 968px) {
@@ -112,12 +170,12 @@ a {
 }
 
 .container h3 {
-  text-align: center;
+  text-align: lef;
   color: var(--first-color);
 }
 
 .container h4 {
-  text-align: center;
+  text-align: left;
 }
 
 /*Remove the property of 100vh, when inserting its content*/
@@ -139,7 +197,7 @@ a {
   width: 328px;
   height: 72px;
   background-color: var(--container-color);
-  box-shadow: 0 8px 32px hsla(231, 44%, 45%, .2);
+  box-shadow: 0 8px 32px hsla(0, 0%, 50%, 0.2);
   margin: 0 auto;
   padding: 1.5rem .5rem;
   border-radius: .65rem;
@@ -235,7 +293,7 @@ a {
   padding: 5px 4px 1px;
   border-radius: 20px;
   background-color: var(--container-color);
-  box-shadow: 0 8px 32px hsla(231, 44%, 45%, .2);
+  box-shadow: 0 8px 32px hsla(0, 0%, 50%, 0.2);
   position: fixed;
   width: 90%;
   left: 0;
@@ -266,6 +324,15 @@ a {
   cursor: pointer;
 }
 
+.header-right a img {
+  filter: invert(13%) sepia(10%) saturate(745%) hue-rotate(0deg) brightness(93%) contrast(94%); /* Black */
+}
+
+body.modo-oscuro .header-right a img {
+  filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(0deg) brightness(100%) contrast(100%); /* White */
+}
+
+
 /*=============== PANTALLA INICIO ===============*/
 
 .cardpostFB {
@@ -278,7 +345,7 @@ a {
 }
 
 .iframe-container {
-  height: 740px;
+  height: 750px;
   /*overflow: auto;  Esto permite el desplazamiento vertical */
 }
 
@@ -289,53 +356,133 @@ a {
 
 
 
-/* PUBLICACIONES INICIO */
-.cardpost {
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  margin: auto;
-  text-align: justify;
-  padding: 20px;
-  border-radius: 20px;
-  background-color: var(--second-color);
-}
+/*=================== PUBLICACIONES INICIO ===================*/
 
-.cardpost img{
-  cursor: pointer;
-  border-radius: 15px;
+.card-post-inicio{
+    position: relative;
+    width: 360px;
+    min-height: 400px;
+    background: var(--second-color);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    border-radius: 20px;
+    margin: auto;
 }
-
-.textpost {
-  color: var(--first-color);
-  font-size: 16px;
+.card-post-inicio .top{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
-
-.time {
-  color: grey;
-  font-size: 12px;
+.card-post-inicio .top .userDeatils{
+    display: flex;
+    align-items: center;
+}
+.card-post-inicio .top .userDeatils .profileImg{
+    position: relative;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 8px;
+    overflow: hidden;
+}
+.cover{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    cursor: pointer;
+}
+.card-post-inicio .top .userDeatils h3{
+    font-size: 18px;
+    color: var(--first-color);
+    font-weight: 700;
+    line-height: 1rem;
+    cursor: pointer;
+}
+.card-post-inicio .top .userDeatils span{
+    font-size: 0.75em;
+}
+.card-post-inicio .top .dot{
+    transform: scale(0.6);
+    cursor: pointer;
+}
+.imgBg{
+    position: relative;
+    width: 100%;
+    height: 320px;
+    margin: 10px 0 15px;
+}
+.btns2{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.btns2 img{
+    max-width: 24px;
+    cursor: pointer;
+}
+.btns2 .left img{
+    margin-right: 8px;
+}
+.likes{
+    margin-top: 5px;
+    font-size: 1em;
+    color: #777;
+}
+.message{
+    font-weight: 400;
+    margin-top: 5px;
+    color: #777;
+    line-height: 1.5em;
+}
+.message b{
+    color: var(--first-color);
+}
+.message span{
+    color: #285898;
+    cursor: pointer;
+}
+.comments{
+    margin-top: 10px;
+    align-items: center;
+    color: #999;
+}
+.addComments{
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+}
+.addComments .userImg{
+    position: relative;
+    min-width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-right: 8px;
+}
+.addComments .text{
+    width: 100%;
+    border: none;
+    outline: none;
+    font-weight: 400;
+    font-size: 18px;
+    color: #262626;
+}
+.addComments .text::placeholder{
+    color: #777;
+}
+.postTime{
+    margin-top: 10px;
+    font-weight: 500;
+    color: #777;
 }
 
 .iconpost {
   color: grey;
   font-size: 12px;
-}
-
-.cardpost button {
-  border: none;
-  outline: 0;
-  padding: 12px;
-  color: white;
-  background-color: var(--first-color);
-  text-align: center;
-  cursor: pointer;
-  width: 100%;
-  font-size: 18px;
-  border-radius: 20px;
-  margin: 10px 0 0 0;
-}
-
-.cardpost h3 {
-  text-align: left;
-  color: var(--first-color);
 }
 
 /*=============== INICIO FULL IMAGENES ===============*/
@@ -355,7 +502,7 @@ a {
 
 .full-Img img{
   width: 90%;
-  max-width: 600px;
+  max-width: 1200px;
   border-radius: 20px;
 }
 
@@ -364,7 +511,7 @@ a {
   top: 5%;
   right: 5%;
   font-size: 30px;
-  color: var(--second-color);
+  color: var(--color-x);
   cursor: pointer;
 }
 
@@ -417,17 +564,10 @@ a {
 }
 
 .close {
-  color: var(--terciary-color);
+  color: var(--color-x2);
   float: right;
   font-size: 28px;
   font-weight: bold;
-}
-
-.close:hover,
-.close:focus {
-  color: var(--first-color);
-  text-decoration: none;
-  cursor: pointer;
 }
 
 /*=============== PERFILES VETERINARIOS ===============*/
@@ -464,16 +604,28 @@ a {
   font-size: 16px;
 }
 
-/*=============== PERFILES EQUIPO ===============*/
+/* Cambiar el color de los iconos en los enlaces */
+.perfilvet a img {
+  filter: invert(0%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(0%) contrast(100%);
+}
 
-/* COLUMNA EQUIPO BOCO */
-.column-boco{
+/* Cambiar el color de los iconos en los enlaces cuando estén en modo oscuro */
+body.modo-oscuro .perfilvet a img {
+  filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(100%) contrast(100%);
+}
+
+
+
+/*=============== LUGARES PET FRIENDLY ===============*/
+
+/* COLUMNA */
+.column-lugares{
   float: left;
   width: 33.33%;
   padding: 10px 10px;
 }
 
-.perfilboco{
+.perfillugares{
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   max-width: 300px;
   margin: auto;
@@ -484,34 +636,39 @@ a {
   background-color: var(--second-color);
 }
 
-.perfilboco img{
+.perfillugares img{
   border-radius: 20px;
 }
 
-.perfilboco h3{
+.perfillugares h3{
   color: var(--first-color);
   font-size: 22px;
 }
 
-.titleboco{
+.titlelugares{
   color: grey;
   font-size: 16px;
 }
 
-/*=============== COLUMNAS ASOCIACIONES ===============*/
-
-.column-asoc{
-  float: left;
-  width: 25%;
-  padding: 10px 10px;
+.perfillugares button {
+  border: none;
+  outline: 0;
+  padding: 12px;
+  color: var(--second-color);
+  background-color: var(--first-color);
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+  font-size: 14px;
+  border-radius: 20px;
+  margin: 10px 0 0 0;
 }
 
-.perfilasoc{
-  max-width: 100%;
-  margin: auto;
+/*========== CONSEJOS ==========*/
+
+.subtitulo h4{
   text-align: center;
 }
-
 
 /*=============== TIENDA ===============*/
 
@@ -521,6 +678,10 @@ a {
   float: left;
   width: 33.33%;
   padding: 10px 10px;
+}
+
+.nombreproducto{
+  text-align: center;
 }
 
 .productoboco{
@@ -578,7 +739,7 @@ a {
   outline: 0;
   padding: 12px;
   color: white;
-  background-color: var(--terciary-color);
+  background-color: var(--color-x2);
   text-align: center;
   cursor: pointer;
   width: 100%;
@@ -587,69 +748,84 @@ a {
   margin: 10px 0 0 0;
 }
 
-/*=============== DONAR ===============*/
+/*=============== CONFIGURACIONES ===============*/
 
-.donarcontainer{
+.column-config{
+  float: left;
+  width: 100%;
+  padding: 10px 10px;
+}
+
+.configboco{
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  max-width: 90%;
+  margin: auto;
   text-align: center;
+  background-color: var(--second-color);
+  padding: 15px;
+  border-radius: 20px;
 }
 
-.donarcontainer h4{
-  text-align: justify;
-  font-size: 12px;
-  margin-top: 5px;
-}
-
-.donarcontainer button{
+.configboco-btn{
   border: none;
   outline: 0;
-  display: inline-block;
-  padding: 10px;
+  padding: 8px;
+  margin-bottom: 10px;
   color: var(--second-color);
   background-color: var(--first-color);
   text-align: center;
   cursor: pointer;
-  width: 50%;
-  font-size: 16px;
-  border-radius: 10px;
-  margin-top: 15px;
+  width: 100%;
+  font-size: 14px;
+  border-radius: 20px;
 }
 
-/*COPIAR LINK APP*/
-
-.containercompartirapp {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.configboco-btn2{
+  border: none;
+  outline: 0;
+  padding: 8px;
+  margin-bottom: 10px;
+  color: var(--second-color);
+  background-color: var(--first-color);
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+  font-size: 14px;
+  border-radius: 20px;
 }
 
-.copyfield{
-    display: flex;
-    align-items: center;
-    background-color: var(--first-color);
-    border-radius: 5px;
+.configboco-btn-active{
+  border: none;
+  outline: 0;
+  padding: 8px;
+  margin-bottom: 10px;
+  color: var(--second-color);
+  background-color: var(--color-x2);
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+  font-size: 14px;
+  border-radius: 20px;
 }
 
-#link{
-    width: 100%;
-    padding: 12px 10px;
-    border: 1px solid var(--first-color);
-    background-color: var(--second-color);
-    border-radius: 5px;
-    font-size: 12px;
-    overflow-x: scroll;
-}
-#link::-webkit-scrollbar{
-    display: none;
-}
-
-#copy-btn{
-    color: var(--second-color);
-    padding: 0 20px;
-    font-size: 14px;
-    cursor: pointer;
+.idioma-btn-activo{
+  border: none;
+  outline: 0;
+  padding: 8px;
+  margin-bottom: 10px;
+  color: var(--second-color);
+  background-color: var(--terciary-color);
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+  font-size: 14px;
+  border-radius: 20px;
 }
 
-
+.configboco i{
+  font-size: 12px;
+  margin-top: 10px;
+}
 
 /*=============== FOOTER ===============*/
 .footer {
@@ -677,16 +853,11 @@ a {
     display: block;
     margin-bottom: 20px;
   }
-  .column-boco{
+  .column-lugares{
     width: 50%;
     display: block;
     margin-bottom: 20px;
   }
-  .column-asoc{
-  float: left;
-  width: 50%;
-  padding: 10px 10px;
-}
 .column-producto{
   float: left;
   width: 50%;
