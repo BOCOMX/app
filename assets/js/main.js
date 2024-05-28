@@ -12,16 +12,17 @@ function cambiarIdioma(lang) {
 // Función para cargar el idioma guardado del almacenamiento local al cargar la página
 function cargarIdioma() {
     const idiomaGuardado = localStorage.getItem('idioma');
-    if (idiomaGuardado === 'es' && window.location.href.includes('bocoapp-en.html')) {
+    const currentUrl = window.location.href;
+
+    if (idiomaGuardado === 'es' && !currentUrl.includes('bocoapp.html')) {
         window.location.href = 'bocoapp.html'; // Redirige al archivo en español
-    } else if (idiomaGuardado === 'en' && window.location.href.includes('bocoapp.html')) {
+    } else if (idiomaGuardado === 'en' && !currentUrl.includes('bocoapp-en.html')) {
         window.location.href = 'bocoapp-en.html'; // Redirige al archivo en inglés
     }
 }
 
 // Llama a la función para cargar el idioma al cargar la página
 window.addEventListener('load', cargarIdioma);
-
 
 
 /*==================== PRELOADER Y LLEVAR PÁGINA ARRIBA AL RECARGAR ====================*/
