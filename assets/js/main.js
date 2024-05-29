@@ -1,31 +1,28 @@
+// Función para cambiar el idioma y guardar la selección en el almacenamiento local
 function cambiarIdioma(lang) {
     if (lang === 'es') {
         localStorage.setItem('idioma', 'es'); // Guarda 'es' en el almacenamiento local
-        history.replaceState(null, '', 'bocoapp.html'); // Cambia la URL sin recargar la página
-        location.reload(); // Recarga la página para aplicar el cambio de idioma
+        window.location.href = 'bocoapp.html'; // Redirige al archivo en español
     } else if (lang === 'en') {
         localStorage.setItem('idioma', 'en'); // Guarda 'en' en el almacenamiento local
-        history.replaceState(null, '', 'bocoapp-en.html'); // Cambia la URL sin recargar la página
-        location.reload(); // Recarga la página para aplicar el cambio de idioma
+        window.location.href = 'bocoapp-en.html'; // Redirige al archivo en inglés
     }
 }
 
+// Función para cargar el idioma guardado del almacenamiento local al cargar la página
 function cargarIdioma() {
     const idiomaGuardado = localStorage.getItem('idioma');
     const currentUrl = window.location.href;
 
     if (idiomaGuardado === 'es' && !currentUrl.includes('bocoapp.html')) {
-        history.replaceState(null, '', 'bocoapp.html'); // Cambia la URL sin recargar la página
-        location.reload(); // Recarga la página para aplicar el idioma guardado
+        window.location.href = 'bocoapp.html'; // Redirige al archivo en español
     } else if (idiomaGuardado === 'en' && !currentUrl.includes('bocoapp-en.html')) {
-        history.replaceState(null, '', 'bocoapp-en.html'); // Cambia la URL sin recargar la página
-        location.reload(); // Recarga la página para aplicar el idioma guardado
+        window.location.href = 'bocoapp-en.html'; // Redirige al archivo en inglés
     }
 }
 
 // Llama a la función para cargar el idioma al cargar la página
 window.addEventListener('load', cargarIdioma);
-
 
 
 /*==================== PRELOADER Y LLEVAR PÁGINA ARRIBA AL RECARGAR ====================*/
