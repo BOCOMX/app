@@ -7,7 +7,7 @@
   "orientation": "portrait",
   "scope": "./",
   "start_url": "./bocoapp.html",
-  "theme_color": "#F9FAFF",
+  "theme_color": "#1C1C1C",
   "categories": [
     "lifestyle"
   ],
