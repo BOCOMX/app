@@ -5,9 +5,8 @@
   "display": "standalone",
   "name": "BOCO",
   "orientation": "portrait",
-  "scope": "https://bocomx.github.io/app/bocoapp.html",
-  "short_name": "BOCO",
-  "start_url": "https://bocomx.github.io/app/bocoapp.html",
+  "scope": "./",
+  "start_url": "./bocoapp.html",
   "theme_color": "#F9FAFF",
   "categories": [
     "lifestyle"
