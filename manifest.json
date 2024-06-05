@@ -5,8 +5,8 @@
   "display": "standalone",
   "name": "BOCO",
   "orientation": "portrait",
-  "scope": "./",
-  "start_url": "./bocoapp.html",
+  "scope": "./APP",
+  "start_url": "./APP/bocoapp.html",
   "theme_color": "#F9FAFF",
   "categories": [
     "lifestyle"
