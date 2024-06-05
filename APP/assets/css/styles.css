@@ -1,0 +1,884 @@
+/*=============== GOOGLE FONTS ===============*/
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap");
+@font-face {
+  font-family: Organic Brand;
+  src: url('./tipografía/Organic-Brand.ttf');
+}
+
+/*=============== VARIABLES CSS ===============*/
+:root {
+  /*========== Colors ==========*/
+  --first-color: #1C1C1C;
+  --second-color: #FFFFFF;
+  --terciary-color: #1C1C1C;
+  --text-color: #6E6F77;
+  --body-color: #F9FAFF;
+  --container-color: #FFFFFF;
+  --color-x: #FFFFFF;
+  --color-x2: #FF678D;
+  --loader-color-1: #0004;
+  --loader-color-2: #0000;
+
+  --first-color-dark: #FFFFFF;
+  --second-color-dark: #1C1C1C;
+  --terciary-color-dark: #FF678D;
+  --text-color-dark: #A9A9A9;
+  --body-color-dark: #121212;
+  --container-color-dark: #1C1C1C;
+  --color-x-dark: #FFFFFF;
+  --color-x2-dark: #FF678D;
+  --loader-color-1-dark: #FFF9;
+  --loader-color-2-dark: #0004;
+
+  /*========== Font and typography ==========*/
+  --body-font: 'Poppins', sans-serif;
+  --tiny-font-size: .625rem;
+}
+
+body.modo-oscuro {
+  --first-color: var(--first-color-dark);
+  --second-color: var(--second-color-dark);
+  --terciary-color: var(--terciary-color-dark);
+  --text-color: var(--text-color-dark);
+  --body-color: var(--body-color-dark);
+  --container-color: var(--container-color-dark);
+  --color-x: var(--color-x-dark);
+  --color-x2: var(--color-x2-dark);
+  --loader-color-1: var(--loader-color-1-dark);
+  --loader-color-2: var(--loader-color-2-dark);
+
+  background-color: var(--body-color-dark);
+  color: var(--text-color-dark);
+}
+
+nav__link img {
+  filter: invert(13%) sepia(10%) saturate(745%) hue-rotate(0deg) brightness(93%) contrast(94%); /* Black */
+  transition: .3s;
+}
+
+body.modo-oscuro .nav__link img {
+  filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(0deg) brightness(100%) contrast(100%); /* White */
+}
+
+.active-link img {
+  filter: invert(13%) sepia(10%) saturate(745%) hue-rotate(0deg) brightness(93%) contrast(94%); /* Black */
+}
+
+body.modo-oscuro .active-link img {
+  filter: grayscale(100%) brightness(60%) contrast(100%); /* Gray */
+}
+
+.indicator {
+  fill: var(--first-color);
+  transition: .3s;
+}
+
+body.modo-oscuro .indicator {
+  fill: var(--first-color-dark);
+}
+
+
+/*=============== PRELOADER ===============*/
+
+.contenedor_loader{
+  background-color: var(--body-color);
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  z-index: 9995;
+  transition: all 2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* HTML: <div class="loader"></div> */
+.loader {
+  width: 20px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: var(--first-color);
+  box-shadow: 0 0 0 0 var(--loader-color-1);
+  animation: l2 1.5s infinite linear;
+  position: relative;
+}
+.loader:before,
+.loader:after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  box-shadow: 0 0 0 0 var(--loader-color-1);
+  animation: inherit;
+  animation-delay: -0.5s;
+}
+.loader:after {
+  animation-delay: -1s;
+}
+@keyframes l2 {
+    100% {box-shadow: 0 0 0 40px var(--loader-color-2);}
+}
+
+@media screen and (min-width: 968px) {
+  :root {
+    --tiny-font-size: .688rem;
+  }
+}
+
+/*=============== BASE ===============*/
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-user-select: none; /* Safari */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none; /* Standard */
+  -webkit-touch-callout: none;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--body-font);
+  background-color: var(--body-color);
+  color: var(--text-color);
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+/*=============== NAVBAR ===============*/
+.container {
+  max-width: 968px;
+  margin-left: 1.5rem;
+  margin-right: 1.5rem;
+  padding-top: 110px;
+}
+
+.container h2 {
+  text-align: center;
+  color: var(--first-color);
+}
+
+.container h3 {
+  text-align: lef;
+  color: var(--first-color);
+}
+
+.container h4 {
+  text-align: left;
+}
+
+/*Remove the property of 100vh, when inserting its content*/
+.container section {
+  height: 100%;
+  padding: 2rem 0;
+}
+
+.container h2 {
+  text-align: center;
+  color: var(--first-color);
+}
+
+.nav {
+  position: fixed;
+  bottom: 1rem;
+  left: 0;
+  right: 0;
+  width: 328px;
+  height: 72px;
+  background-color: var(--container-color);
+  box-shadow: 0 8px 32px hsla(0, 0%, 50%, 0.2);
+  margin: 0 auto;
+  padding: 1.5rem .5rem;
+  border-radius: .65rem;
+  overflow: hidden;
+  z-index: 9997;
+}
+
+.nav__list {
+  display: flex;
+  justify-content: center;
+  column-gap: 2rem;
+}
+
+.nav__link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+}
+
+.nav__link img {
+  font-size: 1.5rem;
+  filter: invert(8%) sepia(18%) saturate(9%) hue-rotate(333deg) brightness(102%) contrast(94%);
+  z-index: 20;
+  transition: .3s;
+}
+
+.nav__name {
+  font-size: var(--tiny-font-size);
+  position: absolute;
+  font-weight: 500;
+  transition: .4s;
+  transform: translateY(50px);
+  z-index: 20;
+  color: var(--body-color);
+  opacity: 0;
+}
+
+/* Indicator link */
+.indicator {
+  position: absolute;
+  left: 5px;
+  bottom: 0;
+  fill: var(--first-color);
+  transition: .3s;
+}
+
+/* Active link */
+.active-link img {
+ filter: brightness(0) invert(100%) sepia(15%) saturate(7448%) hue-rotate(180deg) brightness(114%) contrast(98%);;
+}
+
+.active-link .nav__name {
+  opacity: 1;
+  transform: translateY(28px);
+}
+
+/* Move indicator */
+.nav__link:nth-child(1).active-link ~ .indicator {
+  transform: translateX(calc(56px * 0));
+}
+
+.nav__link:nth-child(2).active-link ~ .indicator {
+  transform: translateX(calc(56px * 1));
+}
+
+.nav__link:nth-child(3).active-link ~ .indicator {
+  transform: translateX(calc(56px * 2));
+}
+
+.nav__link:nth-child(4).active-link ~ .indicator {
+  transform: translateX(calc(56px * 3));
+}
+
+.nav__link:nth-child(5).active-link ~ .indicator {
+  transform: translateX(calc(56px * 4));
+}
+
+/*=============== ESCONDER CONTENIDO ========*/
+
+[data-content] {
+  display: none;
+}
+
+.active-content[data-content] {
+  display: block;
+}
+
+/*=============== MENÚ SUPERIOR ===============*/
+
+/* ENCABEZADO CON IMAGOTIPO Y BOTÓN */
+.header {
+  padding: 5px 4px 1px;
+  border-radius: 20px;
+  background-color: var(--container-color);
+  box-shadow: 0 8px 32px hsla(0, 0%, 50%, 0.2);
+  position: fixed;
+  width: 90%;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  margin-top: 20px;
+  z-index: 9996;
+}
+
+/* CONTENEDOR IMAGOTIPO BOCO Y BOTONES */
+.header a {
+  float: left;
+  color: var(--first-color);
+  text-align: center;
+  text-decoration: none;
+  padding: 20px;
+}
+
+/* ESTILO DE IMAGOTIPO BOCO */
+.header a.logo {
+  font-family: 'Organic Brand';
+  font-size: 25px;
+}
+
+/* ESTILO BOTONES */
+.header a.btnicons{
+  float: right;
+  cursor: pointer;
+}
+
+.header-right a img {
+  filter: invert(13%) sepia(10%) saturate(745%) hue-rotate(0deg) brightness(93%) contrast(94%); /* Black */
+}
+
+body.modo-oscuro .header-right a img {
+  filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(0deg) brightness(100%) contrast(100%); /* White */
+}
+
+
+/*=============== PANTALLA INICIO ===============*/
+
+.cardpostFB {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  margin: auto;
+  text-align: justify;
+  padding: 20px;
+  border-radius: 20px;
+  background-color: var(--second-color);
+}
+
+.iframe-container {
+  height: 750px;
+  /*overflow: auto;  Esto permite el desplazamiento vertical */
+}
+
+.iframe-container2 {
+  height: 780px;
+  /*overflow: auto;  Esto permite el desplazamiento vertical */
+}
+
+
+
+/*=================== PUBLICACIONES INICIO ===================*/
+
+.card-post-inicio{
+    position: relative;
+    width: 360px;
+    min-height: 400px;
+    background: var(--second-color);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    border-radius: 20px;
+    margin: auto;
+}
+.card-post-inicio .top{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.card-post-inicio .top .userDeatils{
+    display: flex;
+    align-items: center;
+}
+.card-post-inicio .top .userDeatils .profileImg{
+    position: relative;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 8px;
+    overflow: hidden;
+}
+.cover{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    cursor: pointer;
+}
+.card-post-inicio .top .userDeatils h3{
+    font-size: 18px;
+    color: var(--first-color);
+    font-weight: 700;
+    line-height: 1rem;
+    cursor: pointer;
+}
+.card-post-inicio .top .userDeatils span{
+    font-size: 0.75em;
+}
+.card-post-inicio .top .dot{
+    transform: scale(0.6);
+    cursor: pointer;
+}
+.imgBg{
+    position: relative;
+    width: 100%;
+    height: 320px;
+    margin: 10px 0 15px;
+}
+.btns2{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.btns2 img{
+    max-width: 24px;
+    cursor: pointer;
+}
+.btns2 .left img{
+    margin-right: 8px;
+}
+.likes{
+    margin-top: 5px;
+    font-size: 1em;
+    color: #777;
+}
+.message{
+    font-weight: 400;
+    margin-top: 5px;
+    color: #777;
+    line-height: 1.5em;
+}
+.message b{
+    color: var(--first-color);
+}
+.message span{
+    color: #285898;
+    cursor: pointer;
+}
+.comments{
+    margin-top: 10px;
+    align-items: center;
+    color: #999;
+}
+.addComments{
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+}
+.addComments .userImg{
+    position: relative;
+    min-width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-right: 8px;
+}
+.addComments .text{
+    width: 100%;
+    border: none;
+    outline: none;
+    font-weight: 400;
+    font-size: 18px;
+    color: #262626;
+}
+.addComments .text::placeholder{
+    color: #777;
+}
+.postTime{
+    margin-top: 10px;
+    font-weight: 500;
+    color: #777;
+}
+
+.iconpost {
+  color: grey;
+  font-size: 12px;
+}
+
+/*=============== INICIO FULL IMAGENES ===============*/
+
+.full-Img{
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.9);
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.full-Img img{
+  width: 90%;
+  max-width: 1200px;
+  border-radius: 20px;
+}
+
+.full-Img span{
+  position: absolute;
+  top: 5%;
+  right: 5%;
+  font-size: 30px;
+  color: var(--color-x);
+  cursor: pointer;
+}
+
+
+/*=============== COLUMNAS ==============*/
+
+/* Float four columns side by side */
+.column {
+  float: left;
+  width: 33.33%;
+  padding: 10px 10px;
+}
+
+/* Remove extra left and right margins, due to padding */
+.row {margin: 0 -5px;}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/*=============== MODAL PARA PRODUCTOS ========*/
+
+/* Estilos generales para los modales */
+.modal {
+  display: none; 
+  position: fixed; 
+  z-index: 9998; 
+  left: 0;
+  top: 0;
+  width: 100%; 
+  height: 100%; 
+  overflow: auto; 
+  background-color: rgba(0,0,0,0.9);
+}
+
+.modal-content {
+  background-color: var(--second-color);
+  margin: 25% auto; 
+  padding: 20px;
+  border-radius: 20px;
+  border: 1px solid none;
+  width: 90%;
+}
+
+.modal img{
+  border-radius: 20px;
+}
+
+.close {
+  color: var(--color-x2);
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+/*=============== PERFILES VETERINARIOS ===============*/
+
+/* COLUMNA EQUIPO BOCO */
+.column-vet{
+  float: left;
+  width: 100%;
+  padding: 10px 10px;
+}
+
+.perfilvet{
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  max-width: 100%;
+  margin: auto;
+  text-align: center;
+  font-size: 16px;
+  border-radius: 20px;
+  padding: 15px;
+  background-color: var(--second-color);
+}
+
+.perfilvet img{
+  border-radius: 20px;
+}
+
+.perfilvet h3{
+  color: var(--first-color);
+  font-size: 22px;
+}
+
+.titlevet{
+  color: grey;
+  font-size: 16px;
+}
+
+/* Cambiar el color de los iconos en los enlaces */
+.perfilvet a img {
+  filter: invert(0%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(0%) contrast(100%);
+}
+
+/* Cambiar el color de los iconos en los enlaces cuando estén en modo oscuro */
+body.modo-oscuro .perfilvet a img {
+  filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(100%) contrast(100%);
+}
+
+
+
+/*=============== LUGARES PET FRIENDLY ===============*/
+
+/* COLUMNA */
+.column-lugares{
+  float: left;
+  width: 33.33%;
+  padding: 10px 10px;
+}
+
+.perfillugares{
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  max-width: 300px;
+  margin: auto;
+  text-align: center;
+  font-size: 16px;
+  border-radius: 20px;
+  padding: 15px;
+  background-color: var(--second-color);
+}
+
+.perfillugares img{
+  border-radius: 20px;
+}
+
+.perfillugares h3{
+  color: var(--first-color);
+  font-size: 22px;
+}
+
+.titlelugares{
+  color: grey;
+  font-size: 16px;
+}
+
+.perfillugares button {
+  border: none;
+  outline: 0;
+  padding: 12px;
+  color: var(--second-color);
+  background-color: var(--first-color);
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+  font-size: 14px;
+  border-radius: 20px;
+  margin: 10px 0 0 0;
+}
+
+/*========== CONSEJOS ==========*/
+
+.subtitulo h4{
+  text-align: center;
+}
+
+/*=============== TIENDA ===============*/
+
+/* COLUMNA PRODUCTOS BOCO */
+
+.column-producto{
+  float: left;
+  width: 33.33%;
+  padding: 10px 10px;
+}
+
+.nombreproducto{
+  text-align: center;
+}
+
+.productoboco{
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  max-width: 300px;
+  margin: auto;
+  text-align: center;
+  background-color: var(--second-color);
+  padding: 15px;
+  border-radius: 20px;
+}
+
+.productoboco img{
+  border-radius: 10px;
+}
+
+.productoboco h3{
+  color: var(--first-color);
+  font-size: 22px;
+}
+
+.titleproductoboco{
+  color: var(--first-color);
+  font-size: 16px;
+  text-align: left;
+}
+
+.productoboco button{
+  border: none;
+  outline: 0;
+  padding: 8px;
+  color: var(--second-color);
+  background-color: var(--first-color);
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+  font-size: 14px;
+  border-radius: 20px;
+}
+
+.precio{
+  color: var(--terciary-color);
+  font-size: 18px;
+}
+
+.nota{
+  font-size: 12px;
+  color: grey;
+  text-align: justify;
+  margin: 5px;
+}
+
+.botoncomprar {
+  border: none;
+  outline: 0;
+  padding: 12px;
+  color: white;
+  background-color: var(--color-x2);
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+  font-size: 18px;
+  border-radius: 20px;
+  margin: 10px 0 0 0;
+}
+
+/*=============== CONFIGURACIONES ===============*/
+
+.column-config{
+  float: left;
+  width: 100%;
+  padding: 10px 10px;
+}
+
+.configboco{
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  max-width: 90%;
+  margin: auto;
+  text-align: center;
+  background-color: var(--second-color);
+  padding: 15px;
+  border-radius: 20px;
+}
+
+.configboco-btn{
+  border: none;
+  outline: 0;
+  padding: 8px;
+  margin-bottom: 10px;
+  color: var(--second-color);
+  background-color: var(--first-color);
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+  font-size: 14px;
+  border-radius: 20px;
+}
+
+.configboco-btn2{
+  border: none;
+  outline: 0;
+  padding: 8px;
+  margin-bottom: 10px;
+  color: var(--second-color);
+  background-color: var(--first-color);
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+  font-size: 14px;
+  border-radius: 20px;
+}
+
+.configboco-btn-active{
+  border: none;
+  outline: 0;
+  padding: 8px;
+  margin-bottom: 10px;
+  color: var(--second-color);
+  background-color: var(--color-x2);
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+  font-size: 14px;
+  border-radius: 20px;
+}
+
+.idioma-btn-activo{
+  border: none;
+  outline: 0;
+  padding: 8px;
+  margin-bottom: 10px;
+  color: var(--second-color);
+  background-color: var(--terciary-color);
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+  font-size: 14px;
+  border-radius: 20px;
+}
+
+.configboco i{
+  font-size: 12px;
+  margin-top: 10px;
+}
+
+/*=============== FOOTER ===============*/
+.footer {
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 70px;
+  background-color: none;
+  color: transparent;
+  text-align: center;
+}
+
+/*=============== BREAKPOINTS ===============*/
+
+@media screen and (max-width: 768px) {
+  .nav-btn {
+    display: none;
+  }
+}
+
+/* Responsive columns */
+@media screen and (max-width: 600px) {
+  .column {
+    width: 50%;
+    display: block;
+    margin-bottom: 20px;
+  }
+  .column-lugares{
+    width: 50%;
+    display: block;
+    margin-bottom: 20px;
+  }
+.column-producto{
+  float: left;
+  width: 50%;
+  margin-bottom: 20px;
+}
+}
+
+/* For small devices */
+@media screen and (max-width: 320px) {
+  .nav {
+    zoom: .8;
+  }
+}
+
+/* For large devices */
+@media screen and (min-width: 968px) {
+  .container {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .nav {
+    zoom: 1.1;
+  }
+}
