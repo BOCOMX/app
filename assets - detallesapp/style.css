@@ -132,7 +132,7 @@ h1, h2 {
   width: 90%;
   color: white;
   position: absolute;
-  top: 35%;
+  top: 40%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
@@ -236,7 +236,7 @@ html[dir=rtl] .app__logo-wrapper {
 }
 .app__screenshots-list {
   display: grid;
-  grid-template-columns: 200px 200px 200px 200px 200px 200px;
+  grid-template-columns: 200px 200px 200px 200px 200px 200px 200px;
   grid-column-gap: 20px;
   padding: 30px 0;
 }
